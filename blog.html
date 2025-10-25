@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Stepway Technologies Insights & Innovations</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --stepway-blue: #0F1957;
+            --stepway-light-bg: #f8f9fa;
+            --stepway-card-bg: #ffffff;
+            --stepway-text-dark: #212529;
+            --stepway-text-light: #555;
+            --stepway-accent: #0d6efd; 
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--stepway-light-bg);
+            color: var(--stepway-text-light);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            color: var(--stepway-blue);
+        }
+        
+        .section-padding { padding: 5rem 0; }
+        .section-bg-light { background-color: #f8f9fa; }
+        .btn-primary {
+            background-color: var(--stepway-blue);
+            border-color: var(--stepway-blue);
+            font-weight: 500;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+        }
+        .btn-primary:hover {
+            background-color: #0c1445;
+            border-color: #0c1445;
+        }
+        
+        /* --- Navbar (Consistent Style) --- */
+        .navbar {
+            background-color: var(--stepway-blue);
+            padding: 0.75rem 0;
+        }
+        .navbar-brand {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 1.6rem;
+            color: #ffffff !important;
+        }
+        .navbar-nav .nav-link {
+            color: #ffffff;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+        }
+            .navbar-nav .nav-link:hover{
+            color: #0d6efd;
+        }
+        .navbar-nav .nav-link.active {
+            
+            text-decoration: underline;
+             text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+        }
+        
+        /* --- Blog Hero Section (image_1ce49b.png) --- */
+        .blog-hero-section {
+            background-color: var(--stepway-blue);
+            /* Placeholder image matching the visual style of the header */
+            background-image: linear-gradient(rgba(15, 25, 87, 0.75), rgba(15, 25, 87, 0.75)), url('img/Design\ a\ distinct\ and\ playful\ book\ cover\ on\ deep\ learning\ _\ Book\ cover\ contest.jpeg'); 
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: top,;
+            padding: 5rem 0 3rem 0;
+            color: #ffffff;
+            text-align: center;
+        }
+        .blog-hero-section h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-top: 1rem;
+        }
+        .blog-hero-section h2 {
+            font-size: 1.25rem;
+            font-weight: 500;
+            color: #e0e0e0;
+        }
+        .blog-hero-section .icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: #ffffff;
+        }
+
+        /* --- Featured Article --- */
+        .featured-article {
+            background-color: var(--stepway-card-bg);
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-top: -5rem; 
+            z-index: 10;
+            position: relative;
+            padding: 2rem;
+        }
+        .featured-article .book-cover {
+            /* Using placeholder image for the book cover */
+            background-image: url('img/Stand\ Out\ on\ the\ Shelf\ or\ Screen.jpeg');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            height: 350px;
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        .featured-article h3 {
+            font-size: 2rem;
+            color: var(--stepway-text-dark);
+            margin-bottom: 1rem;
+        }
+        .featured-article .metadata {
+            color: var(--stepway-text-light);
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* --- Article Card Grid --- */
+        .article-card {
+            background-color: var(--stepway-card-bg);
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            transition: box-shadow 0.3s;
+            overflow: hidden;
+            height: 100%; 
+        }
+        .article-card:hover {
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+        .article-card .card-img-top {
+            height: 300px;
+            object-fit: cover;
+            object-position: top;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+        .article-card .card-body {
+            padding: 1.5rem;
+        }
+        .article-card .card-title {
+            font-size: 1.15rem;
+            font-weight: 600;
+            line-height: 1.4;
+            color: var(--stepway-text-dark);
+        }
+        .article-card .category-badge {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--stepway-accent);
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        /* --- Sidebar Styles --- */
+        .sidebar-card {
+            background-color: var(--stepway-card-bg);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        /* Newsletter */
+        .newsletter-card .btn-primary {
+            width: 100%;
+        }
+
+        /* Share Insight Section (image_1ce496.png) */
+        .share-insight-section {
+            background-color: #f0f4f8; 
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        /* --- Footer (Consistent Style) --- */
+        .footer {
+            background-color: var(--stepway-blue);
+            color: #ced4da;
+            padding-top: 4rem;
+            padding-bottom: 2rem;
+        }
+        .footer .logo-font {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 1.8rem;
+            color: #ffffff;
+            margin-bottom: 1rem;
+        }
+        .footer h5 {
+            color: #ffffff;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+        .footer a {
+            color: #ced4da;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .footer a:hover {
+            color: #ffffff;
+        }
+        .footer .social-icons a {
+            background-color: #0d6efd;
+        }
+        .footer-bottom {
+            border-top: 1px solid #39427b;
+            padding-top: 1.5rem;
+            margin-top: 2rem;
+            font-size: 0.9rem;
+        }
+        .contact-info i {
+            margin-right: 10px;
+            font-size: 1.1rem;
+        }
+
+        /* --- Floating Chat Icon (Consistent Style) --- */
+        .chat-float-icon {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            width: 60px;
+            height: 60px;
+            background-color: var(--stepway-blue);
+            color: #ffffff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            z-index: 1050;
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out;
+        }
+        .chat-float-icon:hover {
+            color: #ffffff;
+            transform: scale(1.1);
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- --- Navbar --- -->
+    <nav class="navbar navbar-expand-lg navbar-dark shadow-sm sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><img src="img/Step-Way Logo.png" alt=""></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+               <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link " aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="product-feelingschat.html">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="services.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="work-with-us.html">Work With Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="request-a-quote.html">Request a Quote</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact-us.html">Contact Us</a>
+                    </li>
+                    <!-- This "Send More" button isn't on the main nav, but from a sub-page.
+                         I'll add it as an example of the blue button. -->
+                    <!-- 
+                    <li class="nav-item ms-lg-2">
+                        <a class="nav-link btn-nav" href="#">Send More</a>
+                    </li>
+                    -->
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- --- Blog Hero Section --- -->
+    <header class="blog-hero-section">
+        <div class="container text-center">
+            <i class="bi bi-lightbulb-fill icon"></i>
+            <h2>Insights & Innovations</h2>
+            <h1>Deep Learning for the Rest of Us</h1>
+            <p class="text-white-50">Explore articles on AI, E-Learning, mental health, and innovation.</p>
+        </div>
+    </header>
+
+    <main class="mt-5">
+        <!-- --- Featured Article Section --- -->
+        <section class="container pb-5 ">
+            <div class="featured-article row align-items-center g-4">
+                <div class="col-lg-5">
+                    <div class="book-cover"></div>
+                </div>
+                <div class="col-lg-7">
+                    <span class="category-badge">Emotional AI</span>
+                    <h3>How Emotional AI is Transforming Education and Workplace Training</h3>
+                    <div class="metadata">
+                        <span>By Dr. Serena Goebel</span> | <span>March 15, 2025</span>
+                    </div>
+                    <p class="text-dark">
+                        Discover how emotional intelligence combined with AI is revolutionizing personalized learning and corporate environments. Learn about the technology driving better communication and stronger team dynamics.
+                    </p>
+                    <a href="#" class="btn btn-primary" style="padding: 0.6rem 1.25rem;">Read Full Story <i class="bi bi-arrow-right"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- --- Latest Articles & Sidebar --- -->
+        <section class="section-padding pt-0 section-bg-light">
+            <div class="container">
+                <div class="row g-5">
+                    
+                    <!-- Main Content: Latest Articles -->
+                    <div class="col-lg-8">
+                        <h2 class="mb-4 text-center text-lg-start">Latest Articles</h2>
+                        <div class="row g-4">
+                            
+                            <!-- Article 1 -->
+                            <div class="col-md-6">
+                                <a href="#" class="article-card d-block text-decoration-none">
+                                    <img src="img/Cover design of the book “PRAYERS IS THE KEY TO YOUR LIFE”_.jpeg" class="card-img-top" alt="Code Snippet">
+                                    <div class="card-body">
+                                        <span class="category-badge">Technology</span>
+                                        <h4 class="card-title">The Future of Web Development: AI-Assisted Coding</h4>
+                                        <p class="card-text">Exploring how AI and machine learning tools are reshaping how developers write, test, and deploy applications.</p>
+                                        <span class="read-more">Read More <i class="bi bi-arrow-right"></i></span>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- Article 2 -->
+                            <div class="col-md-6">
+                                <a href="#" class="article-card d-block text-decoration-none">
+                                    <img src="img/Leadership book cover design! _ Book cover contest.jpeg" class="card-img-top" alt="Brain Diagram">
+                                    <div class="card-body">
+                                        <span class="category-badge">E-Learning</span>
+                                        <h4 class="card-title">Personalized Learning Paths with Generative AI Algorithms</h4>
+                                        <p class="card-text">How Stepway Academy uses advanced algorithms to create adaptive learning experiences tailored to every student's pace and style.</p>
+                                        <span class="read-more">Read More <i class="bi bi-arrow-right"></i></span>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- Article 3 -->
+                            <div class="col-md-6">
+                                <a href="#" class="article-card d-block text-decoration-none">
+                                    <img src="img/Design a book cover for an autobiography.jpeg" class="card-img-top" alt="Data Graph">
+                                    <div class="card-body">
+                                        <span class="category-badge">Data Science</span>
+                                        <h4 class="card-title">Data-Driven Decision Making in Business: Leveraging Analytics</h4>
+                                        <p class="card-text">Transforming raw data into actionable insights for business growth and strategic planning with our expertise.</p>
+                                        <span class="read-more">Read More <i class="bi bi-arrow-right"></i></span>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- Article 4 -->
+                            <div class="col-md-6">
+                                <a href="#" class="article-card d-block text-decoration-none">
+                                    <img src="img/Check out Angelo Jeanpierre's new book cover from 99designs.jpeg" class="card-img-top" alt="Ethics Icon">
+                                    <div class="card-body">
+                                        <span class="category-badge">Ethics & Policy</span>
+                                        <h4 class="card-title">Ethical Considerations in AI-Powered Chat Systems</h4>
+                                        <p class="card-text">A deep dive into the policies and frameworks necessary to ensure AI is used responsibly and ethically in our systems.</p>
+                                        <span class="read-more">Read More <i class="bi bi-arrow-right"></i></span>
+                                    </div>
+                                </a>
+                            </div>
+                            
+                        </div>
+
+                        <!-- Pagination Placeholder -->
+                        <nav aria-label="Page navigation" class="mt-5">
+                            <ul class="pagination justify-content-center">
+                                <li class="page-item disabled"><a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a></li>
+                                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    
+                    <!-- Sidebar -->
+                    <div class="col-lg-4">
+                        
+                        <!-- Search Sidebar Card -->
+                        <div class="sidebar-card">
+                            <h5>Search Articles</h5>
+                            <form class="d-flex search-form">
+                                <input class="form-control" type="search" placeholder="Search..." aria-label="Search">
+                                <button class="btn btn-primary" type="submit"><i class="bi bi-search"></i></button>
+                            </form>
+                        </div>
+
+                        <!-- Categories Sidebar Card -->
+                        <div class="sidebar-card">
+                            <h5>Categories</h5>
+                            <div class="category-list">
+                                <a href="#">Technology <span class="badge bg-secondary-subtle text-secondary">14</span></a>
+                                <a href="#">Data Science <span class="badge bg-secondary-subtle text-secondary">8</span></a>
+                                <a href="#">Emotional Intelligence <span class="badge bg-secondary-subtle text-secondary">12</span></a>
+                                <a href="#">E-Learning <span class="badge bg-secondary-subtle text-secondary">21</span></a>
+                                <a href="#">Careers <span class="badge bg-secondary-subtle text-secondary">5</span></a>
+                                <a href="#">Research <span class="badge bg-secondary-subtle text-secondary">9</span></a>
+                            </div>
+                        </div>
+
+                        <!-- Recent Posts Sidebar Card -->
+                        <div class="sidebar-card">
+                            <h5>Recent Posts</h5>
+                            <a href="#" class="recent-post-item">
+                                <img src="https://placehold.co/60x60/808080/FFFFFF?text=P1" alt="Post 1">
+                                <div class="post-info">
+                                    <div>Inside First Learning Toolkit</div>
+                                    <small>Jan 20, 2025</small>
+                                </div>
+                            </a>
+                            <a href="#" class="recent-post-item">
+                                <img src="https://placehold.co/60x60/808080/FFFFFF?text=P2" alt="Post 2">
+                                <div class="post-info">
+                                    <div>Cybersecurity & Education</div>
+                                    <small>Dec 10, 2024</small>
+                                </div>
+                            </a>
+                            <a href="#" class="recent-post-item">
+                                <img src="https://placehold.co/60x60/808080/FFFFFF?text=P3" alt="Post 3">
+                                <div class="post-info">
+                                    <div>Collaborative Learning Tech</div>
+                                    <small>Nov 5, 2024</small>
+                                </div>
+                            </a>
+                        </div>
+                        
+                        <!-- Newsletter Subscription Card -->
+                        <div class="sidebar-card newsletter-card">
+                            <h5>Subscribe to Newsletter</h5>
+                            <p class="text-muted" style="font-size: 0.9rem;">Get the latest insights delivered directly to your inbox.</p>
+                            <form>
+                                <input type="email" class="form-control mb-2" placeholder="Enter your email address" required>
+                                <button type="submit" class="btn btn-primary">Subscribe</button>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        
+        <!-- --- Share Insight Section (image_1ce496.png) --- -->
+        <section class="share-insight-section">
+            <div class="container">
+                <h4>Want to Share Your Insight?</h4>
+                <p>Partner with us to publish research, articles, and expert thoughts on technology, education, and emotional intelligence.</p>
+                <a href="contact-us.html" class="btn btn-primary">Contact Us</a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- --- Footer (Consistent Style) --- -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-lg-4 col-md-12">
+                    <h5 class="logo-font">Stepway Technologies</h5>
+                    <p class="pe-3">
+                        Connecting education, technology, and emotional intelligence to create meaningful impact for individuals and organizations.
+                    </p>
+                    <div class="social-icons mt-3">
+                        <a href="#" class="btn btn-sm btn-primary" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="btn btn-sm btn-primary" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="btn btn-sm btn-primary" aria-label="Twitter"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="btn btn-sm btn-primary" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Products</a></li>
+                        <li><a href="#">Stepway Academy</a></li>
+                        <li><a href="#">FeelingsChat</a></li>
+                        <li><a href="#">Services</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4 col-6">
+                    <h5>Company</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Work With Us</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4 col-12">
+                    <h5>Support</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="contact-us.html">Contact Us</a></li>
+                        <li><a href="#">Request a Quote</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-12">
+                     <ul class="list-unstyled contact-info d-md-flex justify-content-center">
+                        <li class="mb-2 mb-md-0 me-md-4">
+                            <i class="bi bi-geo-alt-fill"></i>
+                            123 Innovation Drive, Tech City, TC 10101
+                        </li>
+                        <li class="mb-2 mb-md-0 me-md-4">
+                            <i class="bi bi-telephone-fill"></i>
+                            +1 (555) 123-4567
+                        </li>
+                        <li class="mb-2 mb-md-0">
+                            <i class="bi bi-envelope-fill"></i>
+                            info@stepwaytech.com
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom text-center">
+                <p>&copy; 2025 Stepway Technologies. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- --- Floating Chat Icon --- -->
+    <a href="chat-popup.html" class="chat-float-icon" aria-label="Open Chat">
+        <i class="bi bi-chat-right-dots-fill"></i>
+    </a>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+</body>
+</html>

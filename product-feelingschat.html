@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stepway Academy - Stepway Technologies</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        xintegrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --stepway-blue: #0F1957;
+            --stepway-light-bg: #EAEBF3;
+            --stepway-body-bg: #f8f9fa;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--stepway-body-bg);
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            color: var(--stepway-blue);
+        }
+
+        /* --- Navbar --- */
+        .navbar {
+            background-color: var(--stepway-blue);
+        }
+
+        .navbar-brand {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 1.6rem;
+            color: #ffffff !important;
+        }
+
+        .navbar-nav .nav-link {
+            color: #ffffff;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+        }
+
+        .navbar-nav.nav-link:hover {
+            color: #0d6efd;
+        }
+
+        .navbar-nav .nav-link.active {
+
+            text-decoration: underline;
+            text-decoration-thickness: 2px;
+            text-underline-offset: 4px;
+        }
+
+        /* --- Custom Hero/Banner --- */
+        .product-hero {
+             background-image: linear-gradient(rgba(15, 25, 87, 0.511), rgba(15, 25, 87, 0.534)), url('/img/Think\ Academy\ by\ Dorman\ Associates\ _\ Bay\ Area\ Architect.jpeg');
+            
+            /* Placeholder/generic office image to mimic the design */
+            background-size: cover;
+            background-position: center;
+            height: 300px;
+            /* Adjusted height to match screenshot */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #ffffff;
+            position: relative;
+        }
+
+        .product-hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.4);
+            /* Dark overlay */
+            z-index: 1;
+        }
+
+        .product-hero-content {
+            z-index: 2;
+            padding: 0 15px;
+        }
+
+        .product-hero h1 {
+            color: #ffffff;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        /* --- Academy Section --- */
+        .academy-section {
+            padding: 4rem 0;
+        }
+
+        .academy-left {
+            background-color: #ffffff;
+            padding: 3rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .academy-right {
+            background-color: var(--stepway-light-bg);
+            padding: 3rem;
+            border-radius: 8px;
+            position: relative;
+            min-height: 500px;
+            /* To give space for the floating cards */
+        }
+
+        .academy-feature-item {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            background-color: var(--stepway-light-bg);
+            /* Use light background for the items themselves as per the left column of the academy section */
+            border-radius: 8px;
+        }
+
+        .academy-left .academy-feature-item {
+            background-color: var(--stepway-light-bg);
+        }
+
+        /* Specific styling for the list items to match the image */
+        .academy-feature-list .card {
+            background-color: var(--stepway-light-bg);
+            border: none;
+            border-radius: 8px;
+            padding: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        .academy-feature-list .feature-icon {
+            flex-shrink: 0;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background-color: var(--stepway-blue);
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .academy-feature-list h6 {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--stepway-blue);
+            margin-bottom: 0.25rem;
+        }
+
+        .academy-feature-list p {
+            font-size: 0.9rem;
+            margin-bottom: 0;
+        }
+
+
+        /* Floating cards in the right column (mimicking the abstract design) */
+        .floating-card {
+            background-color: #ffffff;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 1rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            position: absolute;
+            width: 160px;
+            /* Adjusted size to be compact */
+            text-align: center;
+        }
+
+        .floating-card-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--stepway-blue);
+            color: #ffffff;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .floating-card small {
+            display: block;
+            font-weight: 500;
+            color: #333;
+            font-size: 0.7rem;
+            /* Smaller text for compact card */
+            line-height: 1.2;
+        }
+
+        .floating-card p {
+            font-size: 0.75rem;
+            margin-bottom: 0;
+            color: #555;
+        }
+
+        /* Positioning the floating cards to match the design's abstract layout */
+        .float-mentor {
+            top: 15%;
+            right: 15%;
+            z-index: 10;
+        }
+
+        .float-live {
+            top: 40%;
+            left: 10%;
+            width: 200px;
+            z-index: 11;
+        }
+
+        .float-real {
+            bottom: 20%;
+            right: 5%;
+            z-index: 12;
+        }
+
+
+        .btn-primary {
+            background-color: var(--stepway-blue);
+            border-color: var(--stepway-blue);
+            font-weight: 500;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+        }
+
+        .btn-primary:hover {
+            background-color: #0c1445;
+            border-color: #0c1445;
+        }
+
+        .btn-outline-primary {
+            color: var(--stepway-blue);
+            border-color: var(--stepway-blue);
+            font-weight: 500;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+        }
+
+        .btn-outline-primary:hover {
+            background-color: var(--stepway-blue);
+            color: #ffffff;
+        }
+
+        /* Style for the 'Login' link button on the Academy page */
+        .login-link {
+            font-weight: 500;
+            color: var(--stepway-blue);
+            text-decoration: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .login-link:hover {
+            text-decoration: underline;
+        }
+
+        /* --- Footer --- */
+        .footer {
+            background-color: var(--stepway-blue);
+            color: #ced4da;
+            padding-top: 4rem;
+            padding-bottom: 2rem;
+        }
+
+        .footer .logo-font {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 1.8rem;
+            color: #ffffff;
+            margin-bottom: 1rem;
+        }
+
+        .footer h5 {
+            color: #ffffff;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer .list-unstyled li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer a {
+            color: #ced4da;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer a:hover {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .footer .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background-color: #0d6efd;
+            /* This blue matches the image */
+            color: #ffffff;
+            margin-right: 0.5rem;
+            text-decoration: none;
+        }
+
+        .footer .contact-info i {
+            margin-right: 10px;
+            font-size: 1.1rem;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #39427b;
+            /* A lighter shade of the BG */
+            padding-top: 1.5rem;
+            margin-top: 2rem;
+            font-size: 0.9rem;
+        }
+
+        /* --- Floating Chat Icon --- */
+        .chat-float-icon {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            width: 60px;
+            height: 60px;
+            background-color: var(--stepway-blue);
+            color: #ffffff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            z-index: 1050;
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .chat-float-icon:hover {
+            color: #ffffff;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark shadow-sm sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><img src="img/Step-Way Logo.png" alt=""></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link " aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="product-feelingschat.html">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="services.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="work-with-us.html">Work With Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="request-a-quote.html">Request a Quote</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact-us.html">Contact Us</a>
+                    </li>
+                    <!-- This "Send More" button isn't on the main nav, but from a sub-page.
+                         I'll add it as an example of the blue button. -->
+                    <!-- 
+                    <li class="nav-item ms-lg-2">
+                        <a class="nav-link btn-nav" href="#">Send More</a>
+                    </li>
+                    -->
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="product-hero">
+        <div class="product-hero-content">
+            <h1 class="display-4">Our Products</h1>
+            <p class="lead" style="color: #ffffff;">Explore how our core products help people and organizations learn,
+                grow, and connect.</p>
+        </div>
+    </header>
+
+    <main class="academy-section">
+        <div class="container">
+            <div class="row g-5">
+
+                <div class="col-lg-6 academy-left">
+                    <h2 class="mb-4">Stepway Academy</h2>
+                    <h4 class="mb-4" style="font-weight: 500;">A learning ecosystem where people **learn, work, and
+                        grow** at the same time.</h4>
+                    <p class="mb-5" style="color: #555;">
+                        At Stepway Academy, we combine education with experience. Learners get hands-on projects,
+                        industry-certified mentorship, and a continuous guidance to prepare them for the workplace. It’s
+                        not just a course platform, it’s a **professional development environment**.
+                    </p>
+
+                    <div class="academy-feature-list">
+                        <div class="card academy-feature-item">
+                            <div class="feature-icon"><i class="bi bi-laptop"></i></div>
+                            <div>
+                                <h6>Online and hybrid learning</h6>
+                                <p>Flexible learning options that fit your schedule and learning preferences.</p>
+                            </div>
+                        </div>
+
+                        <div class="card academy-feature-item">
+                            <div class="feature-icon"><i class="bi bi-person-badge"></i></div>
+                            <div>
+                                <h6>Mentorship and job readiness</h6>
+                                <p>Direct guidance from industry professionals to prepare you for career success.</p>
+                            </div>
+                        </div>
+
+                        <div class="card academy-feature-item">
+                            <div class="feature-icon"><i class="bi bi-award"></i></div>
+                            <div>
+                                <h6>Certificate of completion</h6>
+                                <p>Industry-recognized credentials that validate your skills and knowledge.</p>
+                            </div>
+                        </div>
+
+                        <div class="card academy-feature-item">
+                            <div class="feature-icon"><i class="bi bi-folder-check"></i></div>
+                            <div>
+                                <h6>Real projects with professional experience</h6>
+                                <p>Hands-on experience with actual projects that build your portfolio and resume.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-5 d-flex flex-wrap align-items-center">
+                        <a href="#" class="btn btn-primary me-3 mb-2">Join Now</a>
+                        <a href="#" class="btn btn-outline-primary me-3 mb-2">Request Demo</a>
+                        <a href="#" class="login-link mb-2">Login <i class="bi bi-arrow-right-short ms-1"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 academy-right d-none d-lg-block">
+                    <div class="floating-card float-mentor">
+                        <div class="floating-card-icon"><i class="bi bi-person-badge-fill"></i></div>
+                        <small>Mentorship</small>
+                        <p>professionals</p>
+                    </div>
+
+                    <div class="floating-card float-live">
+                        <div class="floating-card-icon" style="background-color: #0d6efd;"><i
+                                class="bi bi-lightbulb-fill"></i></div>
+                        <small>Live guidance from</small>
+                        <p>industry experts</p>
+                    </div>
+
+                    <div class="floating-card float-real">
+                        <div class="floating-card-icon"><i class="bi bi-folder-check"></i></div>
+                        <small>Real Projects</small>
+                        <p>Work on actual industry projects</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <style>
+        :root {
+            --stepway-blue: #0F1957;
+            --stepway-light-bg: #EAEBF3;
+            --stepway-body-bg: #f8f9fa;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--stepway-body-bg);
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            color: var(--stepway-blue);
+        }
+
+        /* --- Navbar --- */
+        .navbar {
+            background-color: var(--stepway-blue);
+        }
+
+        .navbar-brand {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 1.6rem;
+            color: #ffffff !important;
+        }
+
+        .navbar-nav .nav-link {
+            color: #ffffff;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+        }
+
+            .navbar-nav .nav-link:hover{
+            color: #0d6efd;
+        }
+        .navbar-nav .nav-link.active {
+            
+            text-decoration: underline;
+             text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+        }
+        
+
+        /* --- Product Section --- */
+        .product-section {
+            padding: 6rem 0;
+        }
+
+        .phone-mockup {
+            max-width: 100%;
+            height: auto;
+            /* Placeholder image from a service that mimics the design */
+            content: url('img/mock-landscape.png');
+        }
+
+        .feature-card {
+            background-color: var(--stepway-light-bg);
+            border: none;
+            border-radius: 12px;
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-icon {
+            flex-shrink: 0;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            background-color: #ffffff;
+            color: var(--stepway-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .feature-card h5 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+
+        .feature-card p {
+            margin-bottom: 0;
+            color: #333;
+        }
+
+        .btn-primary {
+            background-color: var(--stepway-blue);
+            border-color: var(--stepway-blue);
+            font-weight: 500;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+        }
+
+        .btn-primary:hover {
+            background-color: #0c1445;
+            border-color: #0c1445;
+        }
+
+        .btn-outline-primary {
+            color: var(--stepway-blue);
+            border-color: var(--stepway-blue);
+            font-weight: 500;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+        }
+
+        .btn-outline-primary:hover {
+            background-color: var(--stepway-blue);
+            color: #ffffff;
+        }
+
+        /* --- Footer --- */
+        .footer {
+            background-color: var(--stepway-blue);
+            color: #ced4da;
+            padding-top: 4rem;
+            padding-bottom: 2rem;
+        }
+
+        .footer .logo-font {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 1.8rem;
+            color: #ffffff;
+            margin-bottom: 1rem;
+        }
+
+        .footer h5 {
+            color: #ffffff;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer .list-unstyled li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer a {
+            color: #ced4da;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer a:hover {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .footer .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background-color: #0d6efd;
+            /* This blue matches the image */
+            color: #ffffff;
+            margin-right: 0.5rem;
+            text-decoration: none;
+        }
+
+        .footer .contact-info i {
+            margin-right: 10px;
+            font-size: 1.1rem;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #39427b;
+            /* A lighter shade of the BG */
+            padding-top: 1.5rem;
+            margin-top: 2rem;
+            font-size: 0.9rem;
+        }
+
+        /* --- Floating Chat Icon --- */
+        .chat-float-icon {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            width: 60px;
+            height: 60px;
+            background-color: var(--stepway-blue);
+            color: #ffffff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            z-index: 1050;
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .chat-float-icon:hover {
+            color: #ffffff;
+            transform: scale(1.1);
+        }
+    </style>
+
+
+    <!-- --- Main Product Section (from image_1d605a.png) --- -->
+    <main class="product-section">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+
+                <!-- Left Column (Phone Mockup) -->
+                <div class="col-lg-5 text-center">
+                    <img src="/img/mock-landscape.png" alt="FeelingsChat App on Phone" class="phone-mockup img-fluid">
+                </div>
+
+                <!-- Right Column (Features) -->
+                <div class="col-lg-7">
+                    <h1 class="display-5 fw-bold mb-3">FeelingsChat</h1>
+                    <h5 class="mb-4" style="font-weight: 400; color: #333;">Helping you understand, express, and connect
+                        better.</h5>
+                    <p class="mb-4" style="font-size: 1.1rem; color: #555;">
+                        FeelingsChat is an app designed to promote healthy communication and emotional understanding.
+                        Whether in relationships, schools, or organizations, it helps users talk about issues
+                        constructively and grow emotional intelligence.
+                    </p>
+
+                    <!-- Feature 1 -->
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="bi bi-person-circle"></i>
+                        </div>
+                        <div>
+                            <h5>Emotional intelligence training</h5>
+                            <p>Develop self-awareness and empathy through guided exercises and reflections.</p>
+                        </div>
+                    </div>
+
+                    <!-- Feature 2 -->
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="bi bi-shield-check"></i>
+                        </div>
+                        <div>
+                            <h5>Safe and private conversations</h5>
+                            <p>Share your thoughts and feelings in a secure, judgment-free environment.</p>
+                        </div>
+                    </div>
+
+                    <!-- Feature 3 -->
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="bi bi-people-fill"></i>
+                        </div>
+                        <div>
+                            <h5>Community and team versions</h5>
+                            <p>Solutions for individuals, teams, and organizations of all sizes.</p>
+                        </div>
+                    </div>
+
+                    <!-- Feature 4 -->
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="bi bi-heart-fill"></i>
+                        </div>
+                        <div>
+                            <h5>Family conflict and resolution tools</h5>
+                            <p>Structured approaches to navigate difficult conversations and find common ground.</p>
+                        </div>
+                    </div>
+
+                    <!-- Buttons -->
+                    <div class="mt-5">
+                        <a href="#" class="btn btn-primary btn-lg me-2 mb-2">Try on Web</a>
+                        <a href="#" class="btn btn-outline-primary btn-lg me-2 mb-2">Download App</a>
+                        <a href="#" class="btn btn-outline-primary btn-lg mb-2">Contact for Teams</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- --- Footer (from image_1d605a.png) --- -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row gy-4">
+
+                <!-- Column 1: Brand and Info -->
+                <div class="col-lg-4 col-md-12">
+                    <h5 class="logo-font">Stepway Technologies</h5>
+                    <p class="pe-3">
+                        Connecting education, technology, and emotional intelligence to create meaningful impact for
+                        individuals and organizations.
+                    </p>
+                    <div class="social-icons mt-3">
+                        <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="bi bi-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                    </div>
+                    <ul class="list-unstyled contact-info mt-4">
+                        <li>
+                            <i class="bi bi-geo-alt-fill"></i>
+                            123 Innovation Drive, Tech City, TC 10101
+                        </li>
+                        <li>
+                            <i class="bi bi-telephone-fill"></i>
+                            +1 (555) 123-4567
+                        </li>
+                        <li>
+                            <i class="bi bi-envelope-fill"></i>
+                            info@stepwaytech.com
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Column 2: Quick Links -->
+                <div class="col-lg-2 col-md-4 col-6">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="product-feelingschat.html">Products</a></li>
+                        <li><a href="#">Stepway Academy</a></li>
+                        <li><a href="product-feelingschat.html">FeelingsChat</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Company -->
+                <div class="col-lg-3 col-md-4 col-6">
+                    <h5>Company</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Work With Us</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Support -->
+                <div class="col-lg-3 col-md-4 col-12">
+                    <h5>Support</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="index.html#contact">Contact Us</a></li>
+                        <li><a href="#">Request a Quote</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom text-center">
+                <p>&copy; 2025 Stepway Technologies. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- --- Floating Chat Icon (from image_1d67ba.jpg) --- -->
+    <a href="#" class="chat-float-icon" aria-label="Open Chat">
+        <i class="bi bi-chat-right-dots-fill"></i>
+    </a>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        xintegrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

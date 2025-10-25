@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Stepway Technologies</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --stepway-blue: #0F1957;
+            --stepway-light-bg: #f8f9fa;
+            --stepway-card-bg: #ffffff;
+            --stepway-text-dark: #212529;
+            --stepway-text-light: #555;
+            --stepway-accent-blue: #0d6efd; 
+            --stepway-contact-card: #f0f4f8; /* Light background for contact info card */
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--stepway-light-bg);
+            color: var(--stepway-text-light);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            color: var(--stepway-blue);
+        }
+        
+        .section-padding { padding: 5rem 0; }
+        .section-bg-light { background-color: #f0f4f8; }
+        .btn-primary {
+            background-color: var(--stepway-blue);
+            border-color: var(--stepway-blue);
+            font-weight: 500;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+        }
+        .btn-primary:hover {
+            background-color: #0c1445;
+            border-color: #0c1445;
+        }
+        
+        /* --- Navbar (Consistent Style) --- */
+        .navbar {
+            background-color: var(--stepway-blue);
+            padding: 0.75rem 0;
+        }
+        .navbar-brand {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 1.6rem;
+            color: #ffffff !important;
+        }
+        .navbar-nav .nav-link {
+            color: #ffffff;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+        }
+            .navbar-nav .nav-link:hover{
+            color: #0d6efd;
+        }
+        .navbar-nav .nav-link.active {
+            
+            text-decoration: underline;
+             text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+        }
+        
+        /* --- Hero Section: Get In Touch (image_1ce47e.png) --- */
+        .contact-hero-section {
+            background-color: var(--stepway-blue);
+            /* Placeholder image matching the visual style */
+            background-image: linear-gradient(rgba(15, 25, 87, 0.313), rgba(15, 25, 87, 0.194)), url('img/Telecommunication\ Photos\ -\ Download\ Free\ High-Quality\ Pictures\ _\ Freepik.jpeg'); 
+            background-size: cover;
+            background-position: top, center;
+            padding: 15rem 0 3rem 0;
+            color: #ffffff;
+            text-align: center;
+        }
+        .contact-hero-section h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-top: 1rem;
+        }
+        .contact-hero-section .icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: #ffffff;
+        }
+
+
+        /* --- Contact Content Section --- */
+        .contact-content {
+            margin-top: -5rem; /* Overlap with hero section */
+            z-index: 10;
+            position: relative;
+        }
+
+        /* Send Message Form Card */
+        .form-card {
+            background-color: var(--stepway-card-bg);
+            border-radius: 12px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            height: 100%;
+        }
+        .form-card h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--stepway-text-dark);
+        }
+        .form-card .form-control, .form-card .form-select {
+            border-radius: 8px;
+            padding: 0.75rem 1rem;
+        }
+
+
+        /* Contact Information Card (image_1ce47e.png) */
+        .info-card {
+            background-color: var(--stepway-contact-card);
+            border-radius: 12px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            height: 100%;
+        }
+        .info-card h2 {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            color: var(--stepway-text-dark);
+        }
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.8rem;
+        }
+        .info-item i {
+            font-size: 1.8rem;
+            color: var(--stepway-blue);
+            margin-right: 1rem;
+            padding-top: 0.1rem;
+        }
+        .info-item h6 {
+            font-weight: 600;
+            margin-bottom: 0.2rem;
+            color: var(--stepway-text-dark);
+        }
+        .info-item p {
+            margin-bottom: 0;
+            font-size: 0.95rem;
+        }
+
+        /* --- Find Us Here Section --- */
+        .find-us-section {
+            padding: 4rem 0;
+        }
+        .map-placeholder {
+            height: 400px;
+            background-color: #e9ecef;
+            border-radius: 12px;
+            border: 1px solid #dee2e6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--stepway-text-light);
+            text-align: center;
+        }
+
+        /* --- Instant Support Section --- */
+        .support-section {
+            padding: 3rem 0;
+            text-align: center;
+            background-color: var(--stepway-card-bg);
+            border-top: 1px solid #e0e0e0;
+        }
+        .support-section h3 {
+            color: var(--stepway-text-dark);
+            margin-bottom: 0.5rem;
+        }
+        .support-section .btn-outline-primary {
+            color: var(--stepway-blue);
+            border-color: var(--stepway-blue);
+            font-weight: 500;
+            padding: 0.75rem 2rem;
+            border-radius: 8px;
+            transition: all 0.2s;
+        }
+        .support-section .btn-outline-primary:hover {
+            background-color: var(--stepway-blue);
+            color: #ffffff;
+        }
+
+        /* --- Social Media Section --- */
+        .social-media-section {
+            padding: 4rem 0 5rem 0;
+            text-align: center;
+            background-color: var(--stepway-light-bg);
+        }
+        .social-media-section .social-icon-lg a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--stepway-blue);
+            color: #ffffff;
+            font-size: 1.5rem;
+            margin: 0 0.5rem;
+            transition: background-color 0.2s;
+        }
+        .social-media-section .social-icon-lg a:hover {
+            background-color: var(--stepway-accent-blue);
+        }
+
+        /* --- Footer (Consistent Style) --- */
+        .footer {
+            background-color: var(--stepway-blue);
+            color: #ced4da;
+            padding-top: 4rem;
+            padding-bottom: 2rem;
+        }
+        .footer .logo-font {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 1.8rem;
+            color: #ffffff;
+            margin-bottom: 1rem;
+        }
+        .footer h5 {
+            color: #ffffff;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+        .footer a {
+            color: #ced4da;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .footer a:hover {
+            color: #ffffff;
+        }
+        .footer .social-icons a {
+            background-color: #0d6efd;
+        }
+        .footer-bottom {
+            border-top: 1px solid #39427b;
+            padding-top: 1.5rem;
+            margin-top: 2rem;
+            font-size: 0.9rem;
+        }
+        .contact-info i {
+            margin-right: 10px;
+            font-size: 1.1rem;
+        }
+        
+        /* --- Floating Chat Icon (Consistent Style) --- */
+        .chat-float-icon {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            width: 60px;
+            height: 60px;
+            background-color: var(--stepway-blue);
+            color: #ffffff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            z-index: 1050;
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out;
+        }
+        .chat-float-icon:hover {
+            color: #ffffff;
+            transform: scale(1.1);
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- --- Navbar --- -->
+    <nav class="navbar navbar-expand-lg navbar-dark shadow-sm sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><img src="img/Step-Way Logo.png" alt=""></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+               <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link " aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="product-feelingschat.html">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="services.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="work-with-us.html">Work With Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="request-a-quote.html">Request a Quote</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="contact-us.html">Contact Us</a>
+                    </li>
+                    <!-- This "Send More" button isn't on the main nav, but from a sub-page.
+                         I'll add it as an example of the blue button. -->
+                    <!-- 
+                    <li class="nav-item ms-lg-2">
+                        <a class="nav-link btn-nav" href="#">Send More</a>
+                    </li>
+                    -->
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- --- Hero Section: Get In Touch --- -->
+    <header class="contact-hero-section">
+        <div class="container">
+            <i class="bi bi-headset icon"></i>
+            <h1>Get In Touch</h1>
+            <p>We'd love to hear from you. Whether you have a great idea, a question, or just want to say hello—let's talk.</p>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- --- Contact Form and Info Section --- -->
+        <section class="container contact-content pb-5">
+            <div class="row g-4">
+                
+                <!-- Contact Form -->
+                <div class="col-lg-7">
+                    <div class="form-card">
+                        <h2>Send Us a Message</h2>
+                        <form>
+                            <div class="mb-3">
+                                <label for="contactName" class="form-label">Full Name</label>
+                                <input type="text" class="form-control" id="contactName" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="contactEmail" class="form-label">Email Address</label>
+                                <input type="email" class="form-control" id="contactEmail" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="contactSubject" class="form-label">Subject / Inquiry Type</label>
+                                <select class="form-select" id="contactSubject" required>
+                                    <option selected disabled value="">Choose a subject...</option>
+                                    <option>General Inquiry</option>
+                                    <option>Sales & Partnerships</option>
+                                    <option>Technical Support</option>
+                                    <option>Career Opportunities</option>
+                                </select>
+                            </div>
+                            <div class="mb-4">
+                                <label for="contactMessage" class="form-label">Your Message</label>
+                                <textarea class="form-control" id="contactMessage" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Send Message <i class="bi bi-send-fill ms-2"></i></button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="col-lg-5">
+                    <div class="info-card">
+                        <h2>Contact Information</h2>
+                        
+                        <div class="info-item">
+                            <i class="bi bi-geo-alt-fill"></i>
+                            <div>
+                                <h6>Head Office</h6>
+                                <p>123 Innovation Drive, Tech City, TC 10101, USA</p>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <i class="bi bi-telephone-fill"></i>
+                            <div>
+                                <h6>Phone Support</h6>
+                                <p>General: +1 (555) 123-4567<br>Support: +1 (555) 987-6543</p>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <i class="bi bi-envelope-fill"></i>
+                            <div>
+                                <h6>Email Us</h6>
+                                <p>General: info@stepwaytech.com<br>Support: help@stepwaytech.com</p>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <i class="bi bi-clock-fill"></i>
+                            <div>
+                                <h6>Business Hours</h6>
+                                <p>Mon - Fri: 9:00 AM - 5:00 PM EST</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- --- Find Us Here Section (Map Placeholder) --- -->
+        <section class="find-us-section section-bg-light">
+            <div class="container">
+                <h2 class="text-center mb-4">Find Our Location</h2>
+                <div class="map-placeholder">
+                    <p class="text-center">
+                        [Map Placeholder: Stepway Technologies Head Office]<br>
+                        123 Innovation Drive, Tech City
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- --- Instant Support Section --- -->
+        <section class="support-section">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-8 text-md-start">
+                        <h3>Need Instant Support?</h3>
+                        <p class="mb-3 mb-md-0">Our support team is available via our live chat widget during business hours.</p>
+                    </div>
+                    <div class="col-md-4 text-md-end">
+                        <a href="chat-popup.html" class="btn btn-outline-primary">Launch Live Chat</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- --- Social Media Section --- -->
+        <section class="social-media-section">
+            <div class="container">
+                <h4 class="mb-4">Connect With Us on Social Media</h4>
+                <div class="social-icon-lg">
+                    <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="bi bi-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- --- Footer (Consistent Style) --- -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-lg-4 col-md-12">
+                    <h5 class="logo-font">Stepway Technologies</h5>
+                    <p class="pe-3">
+                        Connecting education, technology, and emotional intelligence to create meaningful impact for individuals and organizations.
+                    </p>
+                    <div class="social-icons mt-3">
+                        <a href="#" class="btn btn-sm btn-primary" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="btn btn-sm btn-primary" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="btn btn-sm btn-primary" aria-label="Twitter"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="btn btn-sm btn-primary" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="product-feelingschat.html">Products</a></li>
+                        <li><a href="#">Stepway Academy</a></li>
+                        <li><a href="product-feelingschat.html">FeelingsChat</a></li>
+                        <li><a href="services.html">Services</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4 col-6">
+                    <h5>Company</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="work-with-us.html">Work With Us</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4 col-12">
+                    <h5>Support</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="contact-us.html">Contact Us</a></li>
+                        <li><a href="request-a-quote.html">Request a Quote</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-12">
+                     <ul class="list-unstyled contact-info d-md-flex justify-content-center">
+                        <li class="mb-2 mb-md-0 me-md-4">
+                            <i class="bi bi-geo-alt-fill"></i>
+                            123 Innovation Drive, Tech City, TC 10101
+                        </li>
+                        <li class="mb-2 mb-md-0 me-md-4">
+                            <i class="bi bi-telephone-fill"></i>
+                            +1 (555) 123-4567
+                        </li>
+                        <li class="mb-2 mb-md-0">
+                            <i class="bi bi-envelope-fill"></i>
+                            info@stepwaytech.com
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom text-center">
+                <p>&copy; 2025 Stepway Technologies. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- --- Floating Chat Icon --- -->
+    <a href="chat-popup.html" class="chat-float-icon" aria-label="Open Chat">
+        <i class="bi bi-chat-right-dots-fill"></i>
+    </a>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+</body>
+</html>
