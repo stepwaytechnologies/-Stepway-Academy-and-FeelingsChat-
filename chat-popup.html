@@ -119,6 +119,31 @@
             display: flex;
             align-items: center;
         }
+
+
+
+        .typing-dots {
+    display: inline-flex;
+    gap: 3px;
+}
+
+.typing-dots span {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #666;
+    animation: typing 1.4s infinite ease-in-out;
+}
+
+.typing-dots span:nth-child(1) { animation-delay: -0.32s; }
+.typing-dots span:nth-child(2) { animation-delay: -0.16s; }
+
+@keyframes typing {
+    0%, 80%, 100% { transform: scale(0.8); opacity: 0.5; }
+    40% { transform: scale(1); opacity: 1; }
+}
+
+
     </style>
 </head>
 <body>
@@ -136,7 +161,7 @@
                     </div>
                 </div>
             </div>
-            <i class="bi bi-moon-fill text-xl cursor-pointer"></i>
+            <i class="bi bi-moon-fill text-xl cursor-pointer"></i>  
         </div>
 
         <!-- Chat Messages Area -->
@@ -274,5 +299,7 @@
         }
 
     </script>
+
+    <script src="assets/js/chatbot.js"></script>
 </body>
 </html>

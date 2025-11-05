@@ -135,7 +135,7 @@
 
         /* --- Application Form Section --- */
         .application-form-container {
-            padding: 5rem 0;
+            padding: 3rem 0;
             background-color: var(--stepway-light-bg);
         }
         .application-card {
@@ -219,6 +219,31 @@
             color: #ffffff;
         }
 
+/* --- New Styles for Form Toggle --- */
+        .btn-form-toggle {
+            /* Inherit the colors used in your existing brand styling */
+            background-color: var(--stepway-light-bg); 
+            color: var(--stepway-text-light);
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 0.75rem 1.5rem;
+            margin: 0 5px;
+            font-weight: 500;
+            transition: background-color 0.2s, color 0.2s;
+        }
+
+        .btn-form-toggle.active {
+            /* Active state to match the dark blue/burgundy contrast on the image */
+            background-color: var(--stepway-blue); 
+            color: #ffffff;
+            border-color: var(--stepway-blue);
+        }
+
+        /* Adjustments for the form panels */
+        .form-panel {
+            transition: opacity 0.3s ease-in-out;
+        }
+
 
         /* --- Footer (Copied from request-a-quote.html) --- */
         .footer {
@@ -298,6 +323,344 @@
             transform: scale(1.1);
         }
 
+.form-control:valid {
+    border-color: #198754;
+}
+
+.form-control:invalid {
+    border-color: #dc3545;
+}
+
+.form-feedback {
+    display: none;
+    font-size: 0.875rem;
+}
+
+.form-control:invalid + .form-feedback {
+    display: block;
+}
+
+/* Chat Popup Styles - Matching chat-popup.html design */
+.chat-popup-container {
+    position: fixed;
+    bottom: 90px;
+    right: 25px;
+    width: 380px;
+    height: 600px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    z-index: 1060;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    font-family: 'Roboto', sans-serif;
+}
+
+.chat-header {
+    background-color: var(--stepway-blue);
+    color: white;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.chat-header .status {
+    font-size: 0.8rem;
+    color: #ccc;
+}
+
+.chat-messages {
+    flex-grow: 1;
+    padding: 1rem;
+    overflow-y: auto;
+    background-color: #f7f9fb;
+}
+
+.message-bubble {
+    max-width: 85%;
+    padding: 0.75rem 1rem;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    word-wrap: break-word;
+}
+
+.assistant-bubble {
+    background-color: white;
+    color: #333;
+    border-top-left-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.user-bubble {
+    background-color: var(--stepway-blue);
+    color: white;
+    margin-left: auto;
+    border-top-right-radius: 4px;
+}
+
+.chat-actions {
+    margin-top: 1rem;
+}
+
+.quick-action-btn {
+    background-color: white;
+    color: var(--stepway-blue);
+    border: 1px solid var(--stepway-blue);
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: all 0.2s;
+    width: 100%;
+    text-align: left;
+    margin-bottom: 0.5rem;
+}
+
+.quick-action-btn:hover {
+    background-color: var(--stepway-blue);
+    color: white;
+}
+
+.chat-form-container {
+    border-top: 1px solid #eee;
+    padding: 1rem;
+    background: white;
+}
+
+.chat-form-header h5 {
+    color: var(--stepway-blue);
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.chat-form-header p {
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+    color: #333;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--stepway-blue);
+}
+
+.chat-start-btn {
+    width: 100%;
+    background-color: var(--stepway-blue);
+    color: white;
+    border: none;
+    padding: 0.75rem;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.chat-start-btn:hover {
+    background-color: #0c1445;
+}
+
+.chat-input-area {
+    border-top: 1px solid #eee;
+    padding: 0.75rem 1rem;
+    display: flex;
+    align-items: center;
+    background: white;
+}
+
+.chat-input {
+    flex-grow: 1;
+    border: none;
+    outline: none;
+    padding: 0.5rem;
+    border-radius: 0;
+    background-color: white;
+    font-size: 0.9rem;
+}
+
+.input-icon {
+    color: #666;
+    cursor: pointer;
+    margin-left: 0.75rem;
+}
+
+.chat-footer {
+    padding: 0.75rem;
+    display: flex;
+    justify-content: space-around;
+    border-top: 1px solid #eee;
+    background: white;
+}
+
+.footer-btn {
+    background: none;
+    border: none;
+    color: #666;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.footer-btn:hover {
+    background-color: #f5f5f5;
+}
+
+/* Make it responsive */
+@media (max-width: 768px) {
+    .chat-popup-container {
+        width: 100%;
+        height: 100%;
+        bottom: 0;
+        right: 0;
+        border-radius: 0;
+    }
+    
+    .chat-float-icon {
+        bottom: 20px;
+        right: 20px;
+    }
+}
+
+/* Animation for chat popup */
+.chat-popup-container {
+    animation: slideInUp 0.3s ease-out;
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Text colors for time */
+.text-xs {
+    font-size: 0.75rem;
+}
+
+.text-gray-400 {
+    color: #9ca3af;
+}
+
+.text-white {
+    color: white;
+}
+
+.text-lg {
+    font-size: 1.125rem;
+}
+
+.font-semibold {
+    font-weight: 600;
+}
+
+/* Flex utilities */
+.flex {
+    display: flex;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.mr-1 {
+    margin-right: 0.25rem;
+}
+
+.mr-3 {
+    margin-right: 0.75rem;
+}
+
+.ml-2 {
+    margin-left: 0.5rem;
+}
+
+.mt-1 {
+    margin-top: 0.25rem;
+}
+
+.mt-3 {
+    margin-top: 0.75rem;
+}
+
+.mb-3 {
+    margin-bottom: 0.75rem;
+}
+
+.space-y-2 > * + * {
+    margin-top: 0.5rem;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+/* Status indicator */
+.inline-block {
+    display: inline-block;
+}
+
+.w-2 {
+    width: 0.5rem;
+}
+
+.h-2 {
+    height: 0.5rem;
+}
+
+.bg-green-400 {
+    background-color: #4ade80;
+}
+
+.rounded-full {
+    border-radius: 9999px;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.text-blue-600 {
+    color: #2563eb;
+}
+
+.text-xl {
+    font-size: 1.25rem;
+}
     </style>
 </head>
 <body>
@@ -377,67 +740,151 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-8">
                         <div class="application-card">
-                            <h3 class="text-center">Apply to Join Our Team</h3>
-                            <form action="#" method="POST" enctype="multipart/form-data">
+
+                            <div class="d-flex justify-content-center mb-4">
+                                <button class="btn btn-form-toggle active" id="btn-apply">Work with Us</button>
+                                <button class="btn btn-form-toggle" id="btn-proposal">Business Proposal</button>
+                            </div>
+
+                            <div id="form-content">
                                 
-                                <!-- Full Name -->
-                                <div class="mb-4">
-                                    <label for="fullName" class="form-label">Full Name <span class="text-danger">*</span></label>
-                                    <input type="text" class="form-control" id="fullName" placeholder="Your full name" required>
-                                </div>
-                                
-                                <!-- Email Address -->
-                                <div class="mb-4">
-                                    <label for="email" class="form-label">Email Address <span class="text-danger">*</span></label>
-                                    <input type="email" class="form-control" id="email" placeholder="name@example.com" required>
+                                <div id="form-apply" class="form-panel active">
+                                    <h3 class="text-start">Apply to Join Our Team</h3>
+                                   <form action="https://formsubmit.co/info@stepwaytechnologies.com" method="POST" enctype="multipart/form-data">
+    <input type="hidden" name="_subject" value="Job Application - Work With Us">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_captcha" value="false">
+                                        <div class="mb-4">
+                                            <label for="surname" class="form-label">Surname / Last Name (Family Name)<span class="text-danger">*</span></label>
+                                            <input type="text" class="form-control" id="surname" required>
+                                        </div>
+                                        <div class="mb-4">
+                                            <label for="firstName" class="form-label">First Name (Given Name)<span class="text-danger">*</span></label>
+                                            <input type="text" class="form-control" id="firstName" required>
+                                        </div>
+                                        
+                                        <div class="mb-4">
+                                            <label for="email" class="form-label">Email Address <span class="text-danger">*</span></label>
+                                            <input type="email" class="form-control" id="email" required>
+                                        </div>
+                                        <div class="mb-4">
+                                            <label for="skills" class="form-label">Skills / Expertise</label>
+                                            <input type="text" class="form-control" id="skills" placeholder="Add your skills (e.g., JavaScript, Data Analysis, UX Design)">
+                                        </div>
+                                        
+                                        <div class="mb-4">
+                                            <label for="role" class="form-label">Role Interested in <span class="text-danger">*</span></label>
+                                            <select class="form-select" id="role" required>
+                                                <option value="">Select a role</option>
+                                                <option value="Software Development">Software Development (Front-end/Back-end)</option>
+                                                <option value="Data Science / AI">Data Science / AI Research</option>
+                                                <option value="UX/UI Design">UX/UI Design</option>
+                                                <option value="Project Management">Project Management</option>
+                                                <option value="E-Learning/Content">E-Learning / Content Creation</option>
+                                                <option value="Internship">Internship/Apprenticeship</option>
+                                                <option value="Other">Other</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="mb-4">
+                                            <label for="cvUpload" class="form-label">Upload CV (PDF/DOC) <span class="text-danger">*</span></label>
+                                            <div class="input-group">
+                                                <input class="form-control" type="file" id="cvUpload" style="padding: 0.75rem 0.25rem;" required>
+                                                <label class="input-group-text btn btn-light text-muted w-100" for="cvUpload" style="justify-content: center;">Choose file or drag here</label> 
+                                            </div>
+                                            <small class="text-muted">Max file size 5 MB. Accepted formats: PDF, DOC/DOCX.</small>
+                                        </div>
+                                        
+                                        <div class="mb-5">
+                                            <label for="coverLetter" class="form-label">Upload or Write a Cover Letter (.doc/.docx/PDF/short video (not more than 5 MB)) <span class="text-danger">*</span></label>
+                                            <textarea class="form-control mb-3" id="coverLetter" rows="5" placeholder="Write your cover letter here..." required></textarea>
+                                            <div class="input-group">
+                                                <input class="form-control" type="file" id="coverLetterFile" style="padding: 0.75rem 0.25rem;">
+                                                <label class="input-group-text btn btn-light text-muted w-100" for="coverLetterFile" style="justify-content: center;">Choose file or drag here</label> 
+                                            </div>
+                                        </div>
+
+                                        <button type="submit" class="btn submit-button" style="background-color: var(--stepway-bungundy);">Submit Application</button>
+                                        <p class="text-center text-muted mt-3" style="font-size: 0.85rem;">
+                                            Our HR team will review your application and reach out if there's a match.
+                                        </p>
+                                    </form>
                                 </div>
 
-                                <!-- Skills / Expertise -->
-                                <div class="mb-4">
-                                    <label for="skills" class="form-label">Skills / Expertise <span class="text-danger">*</span></label>
-                                    <input type="text" class="form-control" id="skills" placeholder="Add your skills (e.g., JavaScript, Data Analysis, UX Design)" required>
-                                </div>
-                                
-                                <!-- Role Selection -->
-                                <div class="mb-4">
-                                    <label for="role" class="form-label">Interested in <span class="text-danger">*</span></label>
-                                    <select class="form-select" id="role" required>
-                                        <option value="">Select a role</option>
-                                        <option value="Software Development">Software Development (Front-end/Back-end)</option>
-                                        <option value="Data Science / AI">Data Science / AI Research</option>
-                                        <option value="UX/UI Design">UX/UI Design</option>
-                                        <option value="Project Management">Project Management</option>
-                                        <option value="E-Learning/Content">E-Learning / Content Creation</option>
-                                        <option value="Internship">Internship/Apprenticeship</option>
-                                        <option value="Other">Other</option>
-                                    </select>
-                                </div>
 
-                                <!-- CV Upload -->
-                                <div class="mb-4">
-                                    <label for="cvUpload" class="form-label">Upload CV (PDF/DOCX) <span class="text-danger">*</span></label>
-                                    <input class="form-control" type="file" id="cvUpload" required>
-                                    <small class="text-muted">Max file size 5MB (PDF or DOCX preferred)</small>
-                                </div>
-                                
-                                <!-- Message / Why Join -->
-                                <div class="mb-5">
-                                    <label for="message" class="form-label">Message / Why You'd Like to Join <span class="text-danger">*</span></label>
-                                    <textarea class="form-control" id="message" rows="5" placeholder="Tell us why you're interested in joining Stepway Technologies and what you hope to contribute." required></textarea>
-                                </div>
+                                <div id="form-proposal" class="form-panel" style="display: none;">
+                                    <h3 class="text-start">Submit a Business Proposal</h3>
+                                    <p class="text-muted mb-4" style="font-size: 0.95rem;">Collaborate with Stepway Technologies on innovative ideas, services, and projects.</p>
+                                   <form action="https://formsubmit.co/info@stepwaytechnologies.com" method="POST" enctype="multipart/form-data">
+    <input type="hidden" name="_subject" value="Business Proposal Submission">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_captcha" value="false">
+                                        
+                                        <div class="mb-4">
+                                            <label for="proposalTitle" class="form-label">Proposal Title / Heading <span class="text-danger">*</span></label>
+                                            <input type="text" class="form-control" id="proposalTitle" placeholder="Propose an idea, course, or cutting-edge app/service for collaboration or funding" required>
+                                            <small class="text-muted float-end">0/50 characters</small>
+                                        </div>
 
-                                <button type="submit" class="btn  submit-button" >Submit Application</button>
-                                
-                                <p class="text-center text-muted mt-3" style="font-size: 0.85rem;">
-                                    We review every application and reach out if there's a match.
-                                </p>
-                            </form>
+                                        <div class="mb-4">
+                                            <label for="proposalSummary" class="form-label">Proposal Summary <span class="text-danger">*</span></label>
+                                            <textarea class="form-control" id="proposalSummary" rows="6" required></textarea>
+                                        </div>
+
+                                        <div class="mb-5">
+                                            <label for="proposalDocument" class="form-label">Upload Proposal Document / Supporting Files</label>
+                                            <div class="input-group">
+                                                <input class="form-control" type="file" id="proposalDocument" style="padding: 0.75rem 0.25rem;">
+                                                <label class="input-group-text btn btn-light text-muted w-100" for="proposalDocument" style="justify-content: center;">Choose file or drag here</label> 
+                                            </div>
+                                            <small class="text-muted">Maximum file size 5 MB. Accepted formats: Word (.doc/.docx), PDF, or video files.</small>
+                                        </div>
+
+                                        <h4 class="text-start" style="color: var(--stepway-blue); font-size: 1.25rem;">Contact Information</h4>
+                                        <hr class="mt-0 mb-4">
+
+                                        <div class="row">
+                                            <div class="col-md-6 mb-4">
+                                                <label for="contactName" class="form-label">Name <span class="text-danger">*</span></label>
+                                                <input type="text" class="form-control" id="contactName" required>
+                                            </div>
+                                            <div class="col-md-6 mb-4">
+                                                <label for="contactEmail" class="form-label">Email Address <span class="text-danger">*</span></label>
+                                                <input type="email" class="form-control" id="contactEmail" required>
+                                            </div>
+                                            <div class="col-md-6 mb-4">
+                                                <label for="ageGroup" class="form-label">Age Group <span class="text-danger">*</span></label>
+                                                <input type="text" class="form-control" id="ageGroup" required>
+                                            </div>
+                                            <div class="col-md-6 mb-4">
+                                                <label for="phoneNumber" class="form-label">Phone Number</label>
+                                                <input type="tel" class="form-control" id="phoneNumber">
+                                            </div>
+                                            <div class="col-md-6 mb-4">
+                                                <label for="residingCountry" class="form-label">Residing Country <span class="text-danger">*</span></label>
+                                                <input type="text" class="form-control" id="residingCountry" required>
+                                            </div>
+                                            <div class="col-md-6 mb-4">
+                                                <label for="nationality" class="form-label">Nationality <span class="text-danger">*</span></label>
+                                                <input type="text" class="form-control" id="nationality" required>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="alert alert-secondary mt-3" style="font-size: 0.85rem;">
+                                            Do not provide full details of your idea or proposal here. We will reach out if it aligns with areas we can engage or collaborate on.
+                                            <br>
+                                            *Note: This section is different from requesting a service from us.*
+                                        </div>
+
+                                        <button type="submit" class="btn submit-button" style="background-color: var(--stepway-bungundy);">Submit Proposal</button>
+                                    </form>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        
 <!-- --- Culture & Values Section --- -->
         <section class="culture-section">
             <div class="container">
@@ -565,12 +1012,68 @@
         </div>
     </footer>
 
-    <!-- --- Floating Chat Icon --- -->
-    <a href="#" class="chat-float-icon" aria-label="Open Chat">
-        <i class="bi bi-chat-right-dots-fill"></i>
-    </a>
+ <!-- Floating Chat Icon -->
+<a href="javascript:void(0)" class="chat-float-icon" aria-label="Open Chat" onclick="openChatPopup()">
+    <i class="bi bi-chat-right-dots-fill"></i>
+</a>
 
     <!-- Bootstrap JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script>
+// Form submission handling
+document.querySelectorAll('form').forEach(form => {
+    form.addEventListener('submit', function(e) {
+        const submitBtn = this.querySelector('button[type="submit"]');
+        const originalText = submitBtn.innerHTML;
+        
+        // Show loading state
+        submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Sending...';
+        submitBtn.disabled = true;
+        
+        // Re-enable after 5 seconds if still on page
+        setTimeout(() => {
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled = false;
+        }, 5000);
+    });
+});
+</script>
+
+    <script> 
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            const btnApply = document.getElementById('btn-apply');
+            const btnProposal = document.getElementById('btn-proposal');
+            const formApply = document.getElementById('form-apply');
+            const formProposal = document.getElementById('form-proposal');
+
+            function showForm(formToShow, buttonToActivate) {
+                // Hide all forms and deactivate all buttons
+                formApply.style.display = 'none';
+                formProposal.style.display = 'none';
+                btnApply.classList.remove('active');
+                btnProposal.classList.remove('active');
+
+                // Show the target form and activate the target button
+                formToShow.style.display = 'block';
+                buttonToActivate.classList.add('active');
+            }
+
+            // Set up click listeners
+            btnApply.addEventListener('click', function() {
+                showForm(formApply, btnApply);
+            });
+
+            btnProposal.addEventListener('click', function() {
+                showForm(formProposal, btnProposal);
+            });
+
+            // Ensure the initial state is set
+            showForm(formApply, btnApply); 
+        });
+    
+    </script>
+
+    <script src="assets/js/chatbot.js"></script>
 </body>
 </html>
