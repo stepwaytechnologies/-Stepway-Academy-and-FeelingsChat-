@@ -384,42 +384,89 @@
             transform: scale(1.1);
         }
 
-        /* CEO Section Styles */
-        .ceo-section {
-            background-color: var(--stepway-light-bg);
-        }
+.ceo-section {
+    background-color: var(--stepway-light-bg);
+}
 
-        .ceo-card {
-            background-color: var(--stepway-card-bg);
-            border-radius: 12px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-            overflow: hidden;
-        }
+.ceo-card {
+    background-color: var(--stepway-card-bg);
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    overflow: hidden;
+}
 
-        .ceo-image {
-            height: 100%;
-            min-height: 400px;
-            background-size: cover;
-            background-position: center;
-        }
+.ceo-image-container {
+    height: 100%;
+    padding: 1rem;
+}
 
-        .ceo-content {
-            padding: 2.5rem;
-        }
+.ceo-image {
+    height: 400px;
+    background-size: cover;
+    background-position: center top;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
 
-        .ceo-title {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--stepway-blue);
-        }
+.ceo-content {
+    padding: 2.5rem;
+}
 
-        .ceo-credentials {
-            font-size: 0.9rem;
-            color: var(--stepway-text-light);
-            margin-bottom: 1.5rem;
-            font-style: italic;
-        }
+.ceo-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--stepway-blue);
+}
 
+.ceo-credentials {
+    font-size: 0.9rem;
+    color: var(--stepway-text-light);
+    margin-bottom: 1.5rem;
+    font-style: italic;
+}
+
+.ceo-contact {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #eee;
+}
+
+.ceo-contact a {
+    color: var(--stepway-blue);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.ceo-contact a:hover {
+    text-decoration: underline;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 991px) {
+    .ceo-image {
+        height: 300px;
+        background-position: center 20%;
+    }
+    
+    .ceo-content {
+        padding: 2rem 1.5rem;
+    }
+    
+    .ceo-title {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .ceo-image {
+        height: 250px;
+        background-position: center 25%;
+    }
+    
+    .ceo-content {
+        padding: 1.5rem;
+    }
+}
         /* Social Media Carousel */
         .social-carousel {
             background-color: var(--stepway-card-bg);
@@ -676,28 +723,43 @@
             </div>
         </section>
 
-        <!-- --- CEO Section --- -->
-        <section class="section-padding ceo-section" id="about">
-            <div class="container">
-                <div class="ceo-card">
-                    <div class="row g-0">
-                        <div class="col-lg-4">
-                            <div class="ceo-image" style="background-image: url('/img/4456fa956bb4f6e2a01a486dbe26ec45b7826d58.jpg');"></div>
-                        </div>
-                        <div class="col-lg-8">
-                            <div class="ceo-content">
-                                <h2 class="ceo-title">Bamikole Olaleye Akinsehinde — Founder & CEO, Stepway Technologies</h2>
-                                <p class="ceo-credentials">PhD (In-View), MA, PGP-AI/ML, BSc, AFHEA, MNIM (Chartered)</p>
-                                <p>Bamikole Olaleye Akinsehinde (BOA) leads Stepway Technologies with over a decade of work across AI, data science, software development, systems thinking, IT services, and AI-enabled modern farming and agritech. His journey began with Megastat Communication in 2007 and FastLink Communications in 2010, ventures that matured into Stepway Technologies, reflecting years of innovation, learning, and a consistent drive to build technology that simplifies life, enhances efficiency, and bridges people with practical solutions. He applies AI to complex, real-world challenges across finance, healthcare, automotive, retail, telecommunications, agriculture, energy, and human resources, including work in weather dynamics, where he applied AI in a hybrid system to improve the predictability of chaotic systems, aligning innovation with responsibility and measurable impact.</p>
-                                <p>BOA's multidisciplinary approach is grounded in Applied Physics and Creative App Development, complemented by advanced postgraduate programs in AI/ML and digital transformation. He is currently pursuing a PhD in the United Kingdom, alongside a Master's degree also obtained in the UK, further deepening his expertise in research and innovation. As an Associate Fellow of the Higher Education Academy (AFHEA) and a Chartered Member of the Nigerian Institute of Management (MNIM), he is committed to fostering learning, innovation, and responsible technology adoption while translating ideas into scalable products and services that address societal needs.</p>
-                                <p>He steers Stepway Technologies with deep proficiency in predictive modelling, generative AI solutions, data engineering and advanced analytics, cloud computing, software development, computer hardware engineering, AI research and development, modern farming powered by AI (precision agriculture, yield forecasting, and smart resource management), environmental impact assessments, conservation and sustainability programs, and training and human capacity development. This breadth enables Stepway Technologies to deliver cross-industry solutions where technology, ethics, and societal progress converge, championing a mission to harness AI responsibly and empower individuals, organisations, and communities to build smarter.</p>
-                                <p> <span class=" ceo-credentials">  bamikole@stepwaytechnologies.com  <br><a href="http://linkedin.com/in/bamikole">linked in</a> <br><a href="https://scholar.google.com/citations?user=NNeEs08AAAAJ&hl=en"> google schoolar</a> <br> <a href="https://www.Facebook.com/bamolakins"> facebook</a> <br><a href="https://www.researchgate.net/profile/Bamikole-Akinsehinde">research-gate</a> </p>
-                            </div>
+     <!-- --- CEO Section --- -->
+<section class="section-padding ceo-section" id="about">
+    <div class="container">
+        <div class="ceo-card">
+            <div class="row g-0 align-items-center">
+                <div class="col-lg-4">
+                    <div class="ceo-image-container">
+                        <div class="ceo-image" style="background-image: url('/img/4456fa956bb4f6e2a01a486dbe26ec45b7826d58.jpg');"></div>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="ceo-content">
+                        <h2 class="ceo-title">Bamikole Olaleye Akinsehinde — Founder & CEO</h2>
+                        <p class="ceo-credentials">PhD (In-View), MA, PGP-AI/ML, BSc, AFHEA, MNIM (Chartered)</p>
+                        
+                        <p>With over a decade of experience across AI, data science, and software development, Bamikole leads Stepway Technologies in building technology that simplifies life and bridges people with practical solutions.</p>
+                        
+                        <p>His journey began with Megastat Communication (2007) and FastLink Communications (2010), ventures that evolved into Stepway Technologies. He applies AI to complex challenges across finance, healthcare, agriculture, telecommunications, and energy sectors.</p>
+                        
+                        <p>Currently pursuing a PhD in the UK alongside advanced AI/ML postgraduate studies, Bamikole combines technical expertise with research innovation. As an AFHEA and Chartered MNIM member, he champions responsible technology adoption and scalable solutions that address societal needs.</p>
+                        
+                        <div class="ceo-contact">
+                            <p class="ceo-credentials">
+                                <strong>Contact:</strong><br>
+                                bamikole@stepwaytechnologies.com<br>
+                                <a href="http://linkedin.com/in/bamikole">LinkedIn</a> • 
+                                <a href="https://scholar.google.com/citations?user=NNeEs08AAAAJ&hl=en">Google Scholar</a><br>
+                                <a href="https://www.Facebook.com/bamolakins">Facebook</a> • 
+                                <a href="https://www.researchgate.net/profile/Bamikole-Akinsehinde">ResearchGate</a>
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </div>
+</section>
 
         <!-- --- Testimonials Section --- -->
         <section class="section-padding testimonial" >
