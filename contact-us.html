@@ -1,20 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - Stepway Technologies</title>
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
-    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        crossorigin="anonymous">
+
     <!-- Bootstrap Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet">
 
     <style>
         :root {
@@ -23,9 +27,9 @@
             --stepway-card-bg: #ffffff;
             --stepway-text-dark: #212529;
             --stepway-text-light: #555;
-            --stepway-accent-blue: #0d6efd; 
-            --stepway-contact-card: #f0f4f8; 
-            --stepway-bungundy:#800020;
+            --stepway-accent-blue: #0d6efd;
+            --stepway-contact-card: #f0f4f8;
+            --stepway-bungundy: #800020;
         }
 
         body {
@@ -34,14 +38,25 @@
             color: var(--stepway-text-light);
         }
 
-        h1, h2, h3, h4, h5, h6 {
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
             font-family: 'Poppins', sans-serif;
             font-weight: 600;
             color: var(--stepway-blue);
         }
-        
-        .section-padding { padding: 5rem 0; }
-        .section-bg-light { background-color: #f0f4f8; }
+
+        .section-padding {
+            padding: 5rem 0;
+        }
+
+        .section-bg-light {
+            background-color: #f0f4f8;
+        }
+
         .btn-primary {
             background-color: var(--stepway-blue);
             border-color: var(--stepway-blue);
@@ -49,55 +64,62 @@
             padding: 0.75rem 1.5rem;
             border-radius: 8px;
         }
+
         .btn-primary:hover {
             background-color: #0c1445;
             border-color: #0c1445;
         }
-        
+
         /* --- Navbar (Consistent Style) --- */
         .navbar {
             background-color: var(--stepway-blue);
             padding: 0.75rem 0;
         }
+
         .navbar-brand {
             font-family: 'Poppins', sans-serif;
             font-weight: 700;
             font-size: 1.6rem;
             color: #ffffff !important;
         }
+
         .navbar-nav .nav-link {
             color: #ffffff;
             font-weight: 500;
             padding: 0.5rem 1rem;
             border-radius: 6px;
         }
-            .navbar-nav .nav-link:hover{
+
+        .navbar-nav .nav-link:hover {
             color: #0d6efd;
         }
+
         .navbar-nav .nav-link.active {
-            
+
             text-decoration: underline;
-             text-decoration-thickness: 2px;
-  text-underline-offset: 4px;
+            text-decoration-thickness: 2px;
+            text-underline-offset: 4px;
         }
-        
+
         /* --- Hero Section: Get In Touch (image_1ce47e.png) --- */
         .contact-hero-section {
             background-color: var(--stepway-blue);
             /* Placeholder image matching the visual style */
-            background-image: linear-gradient(rgba(15, 25, 87, 0.313), rgba(15, 25, 87, 0.194)), url('img/Telecommunication\ Photos\ -\ Download\ Free\ High-Quality\ Pictures\ _\ Freepik.jpeg'); 
+            background-image: linear-gradient(rgba(15, 25, 87, 0.313), rgba(15, 25, 87, 0.194)), url('img/Telecommunication\ Photos\ -\ Download\ Free\ High-Quality\ Pictures\ _\ Freepik.jpeg');
             background-size: cover;
             background-position: top, center;
             padding: 15rem 0 3rem 0;
             color: #ffffff;
             text-align: center;
         }
+
         .contact-hero-section h1 {
             font-size: 2.5rem;
             font-weight: 700;
             color: #ffffff;
             margin-top: 1rem;
         }
+
         .contact-hero-section .icon {
             font-size: 2.5rem;
             margin-bottom: 0.5rem;
@@ -107,7 +129,8 @@
 
         /* --- Contact Content Section --- */
         .contact-content {
-            margin-top: -5rem; /* Overlap with hero section */
+            margin-top: -5rem;
+            /* Overlap with hero section */
             z-index: 10;
             position: relative;
         }
@@ -120,12 +143,15 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             height: 100%;
         }
+
         .form-card h2 {
             font-size: 1.8rem;
             margin-bottom: 1.5rem;
             color: var(--stepway-text-dark);
         }
-        .form-card .form-control, .form-card .form-select {
+
+        .form-card .form-control,
+        .form-card .form-select {
             border-radius: 8px;
             padding: 0.75rem 1rem;
         }
@@ -139,27 +165,32 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
             height: 100%;
         }
+
         .info-card h2 {
             font-size: 1.8rem;
             margin-bottom: 2rem;
             color: var(--stepway-text-dark);
         }
+
         .info-item {
             display: flex;
             align-items: flex-start;
             margin-bottom: 1.8rem;
         }
+
         .info-item i {
             font-size: 1.8rem;
             color: var(--stepway-blue);
             margin-right: 1rem;
             padding-top: 0.1rem;
         }
+
         .info-item h6 {
             font-weight: 600;
             margin-bottom: 0.2rem;
             color: var(--stepway-text-dark);
         }
+
         .info-item p {
             margin-bottom: 0;
             font-size: 0.95rem;
@@ -169,6 +200,7 @@
         .find-us-section {
             padding: 4rem 0;
         }
+
         .map-placeholder {
             height: 400px;
             background-color: #e9ecef;
@@ -189,10 +221,12 @@
             background-color: var(--stepway-card-bg);
             border-top: 1px solid #e0e0e0;
         }
+
         .support-section h3 {
             color: var(--stepway-text-dark);
             margin-bottom: 0.5rem;
         }
+
         .support-section .btn-outline-primary {
             color: var(--stepway-blue);
             border-color: var(--stepway-blue);
@@ -201,6 +235,7 @@
             border-radius: 8px;
             transition: all 0.2s;
         }
+
         .support-section .btn-outline-primary:hover {
             background-color: var(--stepway-blue);
             color: #ffffff;
@@ -212,6 +247,7 @@
             text-align: center;
             background-color: var(--stepway-light-bg);
         }
+
         .social-media-section .social-icon-lg a {
             display: inline-flex;
             align-items: center;
@@ -225,6 +261,7 @@
             margin: 0 0.5rem;
             transition: background-color 0.2s;
         }
+
         .social-media-section .social-icon-lg a:hover {
             background-color: var(--stepway-accent-blue);
         }
@@ -236,6 +273,7 @@
             padding-top: 4rem;
             padding-bottom: 2rem;
         }
+
         .footer .logo-font {
             font-family: 'Poppins', sans-serif;
             font-weight: 700;
@@ -243,33 +281,39 @@
             color: #ffffff;
             margin-bottom: 1rem;
         }
+
         .footer h5 {
             color: #ffffff;
             font-weight: 600;
             margin-bottom: 1.5rem;
         }
+
         .footer a {
             color: #ced4da;
             text-decoration: none;
             transition: color 0.2s;
         }
+
         .footer a:hover {
             color: #ffffff;
         }
+
         .footer .social-icons a {
             background-color: #0d6efd;
         }
+
         .footer-bottom {
             border-top: 1px solid #39427b;
             padding-top: 1.5rem;
             margin-top: 2rem;
             font-size: 0.9rem;
         }
+
         .contact-info i {
             margin-right: 10px;
             font-size: 1.1rem;
         }
-        
+
         /* --- Floating Chat Icon (Consistent Style) --- */
         .chat-float-icon {
             position: fixed;
@@ -289,363 +333,367 @@
             cursor: pointer;
             transition: transform 0.2s ease-in-out;
         }
+
         .chat-float-icon:hover {
             color: #ffffff;
             transform: scale(1.1);
         }
 
 
-.form-control:valid {
-    border-color: #198754;
-}
+        .form-control:valid {
+            border-color: #198754;
+        }
 
-.form-control:invalid {
-    border-color: #dc3545;
-}
+        .form-control:invalid {
+            border-color: #dc3545;
+        }
 
-.form-feedback {
-    display: none;
-    font-size: 0.875rem;
-}
+        .form-feedback {
+            display: none;
+            font-size: 0.875rem;
+        }
 
-.form-control:invalid + .form-feedback {
-    display: block;
-}
+        .form-control:invalid+.form-feedback {
+            display: block;
+        }
 
-/* Chat Popup Styles - Matching chat-popup.html design */
-.chat-popup-container {
-    position: fixed;
-    bottom: 90px;
-    right: 25px;
-    width: 380px;
-    height: 600px;
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-    z-index: 1060;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    font-family: 'Roboto', sans-serif;
-}
+        /* Chat Popup Styles - Matching chat-popup.html design */
+        .chat-popup-container {
+            position: fixed;
+            bottom: 90px;
+            right: 25px;
+            width: 380px;
+            height: 600px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            z-index: 1060;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            font-family: 'Roboto', sans-serif;
+        }
 
-.chat-header {
-    background-color: var(--stepway-blue);
-    color: white;
-    padding: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
+        .chat-header {
+            background-color: var(--stepway-blue);
+            color: white;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
 
-.chat-header .status {
-    font-size: 0.8rem;
-    color: #ccc;
-}
+        .chat-header .status {
+            font-size: 0.8rem;
+            color: #ccc;
+        }
 
-.chat-messages {
-    flex-grow: 1;
-    padding: 1rem;
-    overflow-y: auto;
-    background-color: #f7f9fb;
-}
+        .chat-messages {
+            flex-grow: 1;
+            padding: 1rem;
+            overflow-y: auto;
+            background-color: #f7f9fb;
+        }
 
-.message-bubble {
-    max-width: 85%;
-    padding: 0.75rem 1rem;
-    border-radius: 12px;
-    margin-bottom: 1rem;
-    word-wrap: break-word;
-}
+        .message-bubble {
+            max-width: 85%;
+            padding: 0.75rem 1rem;
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            word-wrap: break-word;
+        }
 
-.assistant-bubble {
-    background-color: white;
-    color: #333;
-    border-top-left-radius: 4px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-}
+        .assistant-bubble {
+            background-color: white;
+            color: #333;
+            border-top-left-radius: 4px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
 
-.user-bubble {
-    background-color: var(--stepway-blue);
-    color: white;
-    margin-left: auto;
-    border-top-right-radius: 4px;
-}
+        .user-bubble {
+            background-color: var(--stepway-blue);
+            color: white;
+            margin-left: auto;
+            border-top-right-radius: 4px;
+        }
 
-.chat-actions {
-    margin-top: 1rem;
-}
+        .chat-actions {
+            margin-top: 1rem;
+        }
 
-.quick-action-btn {
-    background-color: white;
-    color: var(--stepway-blue);
-    border: 1px solid var(--stepway-blue);
-    padding: 0.6rem 1rem;
-    border-radius: 8px;
-    font-weight: 500;
-    font-size: 0.9rem;
-    transition: all 0.2s;
-    width: 100%;
-    text-align: left;
-    margin-bottom: 0.5rem;
-}
+        .quick-action-btn {
+            background-color: white;
+            color: var(--stepway-blue);
+            border: 1px solid var(--stepway-blue);
+            padding: 0.6rem 1rem;
+            border-radius: 8px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+            width: 100%;
+            text-align: left;
+            margin-bottom: 0.5rem;
+        }
 
-.quick-action-btn:hover {
-    background-color: var(--stepway-blue);
-    color: white;
-}
+        .quick-action-btn:hover {
+            background-color: var(--stepway-blue);
+            color: white;
+        }
 
-.chat-form-container {
-    border-top: 1px solid #eee;
-    padding: 1rem;
-    background: white;
-}
+        .chat-form-container {
+            border-top: 1px solid #eee;
+            padding: 1rem;
+            background: white;
+        }
 
-.chat-form-header h5 {
-    color: var(--stepway-blue);
-    margin-bottom: 0.5rem;
-    font-size: 1rem;
-}
+        .chat-form-header h5 {
+            color: var(--stepway-blue);
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
 
-.chat-form-header p {
-    font-size: 0.85rem;
-    color: #666;
-    margin-bottom: 1rem;
-}
+        .chat-form-header p {
+            font-size: 0.85rem;
+            color: #666;
+            margin-bottom: 1rem;
+        }
 
-.form-group {
-    margin-bottom: 1rem;
-}
+        .form-group {
+            margin-bottom: 1rem;
+        }
 
-.form-group label {
-    display: block;
-    font-size: 0.85rem;
-    font-weight: 500;
-    margin-bottom: 0.25rem;
-    color: #333;
-}
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 0.25rem;
+            color: #333;
+        }
 
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 0.5rem;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 0.85rem;
-    font-family: 'Roboto', sans-serif;
-    box-sizing: border-box;
-}
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-family: 'Roboto', sans-serif;
+            box-sizing: border-box;
+        }
 
-.form-group input:focus,
-.form-group textarea:focus {
-    outline: none;
-    border-color: var(--stepway-blue);
-}
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--stepway-blue);
+        }
 
-.chat-start-btn {
-    width: 100%;
-    background-color: var(--stepway-blue);
-    color: white;
-    border: none;
-    padding: 0.75rem;
-    border-radius: 6px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: background-color 0.2s;
-}
+        .chat-start-btn {
+            width: 100%;
+            background-color: var(--stepway-blue);
+            color: white;
+            border: none;
+            padding: 0.75rem;
+            border-radius: 6px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
 
-.chat-start-btn:hover {
-    background-color: #0c1445;
-}
+        .chat-start-btn:hover {
+            background-color: #0c1445;
+        }
 
-.chat-input-area {
-    border-top: 1px solid #eee;
-    padding: 0.75rem 1rem;
-    display: flex;
-    align-items: center;
-    background: white;
-}
+        .chat-input-area {
+            border-top: 1px solid #eee;
+            padding: 0.75rem 1rem;
+            display: flex;
+            align-items: center;
+            background: white;
+        }
 
-.chat-input {
-    flex-grow: 1;
-    border: none;
-    outline: none;
-    padding: 0.5rem;
-    border-radius: 0;
-    background-color: white;
-    font-size: 0.9rem;
-}
+        .chat-input {
+            flex-grow: 1;
+            border: none;
+            outline: none;
+            padding: 0.5rem;
+            border-radius: 0;
+            background-color: white;
+            font-size: 0.9rem;
+        }
 
-.input-icon {
-    color: #666;
-    cursor: pointer;
-    margin-left: 0.75rem;
-}
+        .input-icon {
+            color: #666;
+            cursor: pointer;
+            margin-left: 0.75rem;
+        }
 
-.chat-footer {
-    padding: 0.75rem;
-    display: flex;
-    justify-content: space-around;
-    border-top: 1px solid #eee;
-    background: white;
-}
+        .chat-footer {
+            padding: 0.75rem;
+            display: flex;
+            justify-content: space-around;
+            border-top: 1px solid #eee;
+            background: white;
+        }
 
-.footer-btn {
-    background: none;
-    border: none;
-    color: #666;
-    font-size: 0.9rem;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    padding: 0.5rem;
-    border-radius: 4px;
-    transition: background-color 0.2s;
-}
+        .footer-btn {
+            background: none;
+            border: none;
+            color: #666;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 4px;
+            transition: background-color 0.2s;
+        }
 
-.footer-btn:hover {
-    background-color: #f5f5f5;
-}
+        .footer-btn:hover {
+            background-color: #f5f5f5;
+        }
 
-/* Make it responsive */
-@media (max-width: 768px) {
-    .chat-popup-container {
-        width: 100%;
-        height: 100%;
-        bottom: 0;
-        right: 0;
-        border-radius: 0;
-    }
-    
-    .chat-float-icon {
-        bottom: 20px;
-        right: 20px;
-    }
-}
+        /* Make it responsive */
+        @media (max-width: 768px) {
+            .chat-popup-container {
+                width: 100%;
+                height: 100%;
+                bottom: 0;
+                right: 0;
+                border-radius: 0;
+            }
 
-/* Animation for chat popup */
-.chat-popup-container {
-    animation: slideInUp 0.3s ease-out;
-}
+            .chat-float-icon {
+                bottom: 20px;
+                right: 20px;
+            }
+        }
 
-@keyframes slideInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+        /* Animation for chat popup */
+        .chat-popup-container {
+            animation: slideInUp 0.3s ease-out;
+        }
 
-/* Text colors for time */
-.text-xs {
-    font-size: 0.75rem;
-}
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
 
-.text-gray-400 {
-    color: #9ca3af;
-}
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-.text-white {
-    color: white;
-}
+        /* Text colors for time */
+        .text-xs {
+            font-size: 0.75rem;
+        }
 
-.text-lg {
-    font-size: 1.125rem;
-}
+        .text-gray-400 {
+            color: #9ca3af;
+        }
 
-.font-semibold {
-    font-weight: 600;
-}
+        .text-white {
+            color: white;
+        }
 
-/* Flex utilities */
-.flex {
-    display: flex;
-}
+        .text-lg {
+            font-size: 1.125rem;
+        }
 
-.items-center {
-    align-items: center;
-}
+        .font-semibold {
+            font-weight: 600;
+        }
 
-.mr-1 {
-    margin-right: 0.25rem;
-}
+        /* Flex utilities */
+        .flex {
+            display: flex;
+        }
 
-.mr-3 {
-    margin-right: 0.75rem;
-}
+        .items-center {
+            align-items: center;
+        }
 
-.ml-2 {
-    margin-left: 0.5rem;
-}
+        .mr-1 {
+            margin-right: 0.25rem;
+        }
 
-.mt-1 {
-    margin-top: 0.25rem;
-}
+        .mr-3 {
+            margin-right: 0.75rem;
+        }
 
-.mt-3 {
-    margin-top: 0.75rem;
-}
+        .ml-2 {
+            margin-left: 0.5rem;
+        }
 
-.mb-3 {
-    margin-bottom: 0.75rem;
-}
+        .mt-1 {
+            margin-top: 0.25rem;
+        }
 
-.space-y-2 > * + * {
-    margin-top: 0.5rem;
-}
+        .mt-3 {
+            margin-top: 0.75rem;
+        }
 
-.flex-col {
-    flex-direction: column;
-}
+        .mb-3 {
+            margin-bottom: 0.75rem;
+        }
 
-/* Status indicator */
-.inline-block {
-    display: inline-block;
-}
+        .space-y-2>*+* {
+            margin-top: 0.5rem;
+        }
 
-.w-2 {
-    width: 0.5rem;
-}
+        .flex-col {
+            flex-direction: column;
+        }
 
-.h-2 {
-    height: 0.5rem;
-}
+        /* Status indicator */
+        .inline-block {
+            display: inline-block;
+        }
 
-.bg-green-400 {
-    background-color: #4ade80;
-}
+        .w-2 {
+            width: 0.5rem;
+        }
 
-.rounded-full {
-    border-radius: 9999px;
-}
+        .h-2 {
+            height: 0.5rem;
+        }
 
-.cursor-pointer {
-    cursor: pointer;
-}
+        .bg-green-400 {
+            background-color: #4ade80;
+        }
 
-.text-blue-600 {
-    color: #2563eb;
-}
+        .rounded-full {
+            border-radius: 9999px;
+        }
 
-.text-xl {
-    font-size: 1.25rem;
-}
+        .cursor-pointer {
+            cursor: pointer;
+        }
+
+        .text-blue-600 {
+            color: #2563eb;
+        }
+
+        .text-xl {
+            font-size: 1.25rem;
+        }
     </style>
 </head>
+
 <body>
 
     <!-- --- Navbar --- -->
     <nav class="navbar navbar-expand-lg navbar-dark shadow-sm sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="index.html"><img src="img/Step-Way Logo.png"  width="150px"  alt=""></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <a class="navbar-brand" href="index.html"><img src="img/Step-Way Logo.png" width="150px" alt=""></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-               <ul class="navbar-nav ms-auto align-items-center">
+                <ul class="navbar-nav ms-auto align-items-center">
                     <li class="nav-item">
                         <a class="nav-link " aria-current="page" href="index.html">Home</a>
                     </li>
@@ -684,7 +732,8 @@
         <div class="container">
             <i class="bi bi-headset icon"></i>
             <h1>Get In Touch</h1>
-            <p>We'd love to hear from you. Whether you have a great idea, a question, or just want to say hello—let's talk.</p>
+            <p>We'd love to hear from you. Whether you have a great idea, a question, or just want to say hello—let's
+                talk.</p>
         </div>
     </header>
 
@@ -693,16 +742,16 @@
         <!-- --- Contact Form and Info Section --- -->
         <section class="container contact-content pb-5">
             <div class="row g-4">
-                
+
                 <!-- Contact Form -->
                 <div class="col-lg-7">
                     <div class="form-card">
                         <h2>Send Us a Message</h2>
                         <form action="https://formsubmit.co/info@stepwaytechnologies.com" method="POST">
-    <input type="hidden" name="_subject" value="New Contact Form Submission">
-    <input type="hidden" name="_template" value="table">
-    <input type="hidden" name="_captcha" value="false">
-    <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html">
+                            <input type="hidden" name="_subject" value="New Contact Form Submission">
+                            <input type="hidden" name="_template" value="table">
+                            <input type="hidden" name="_captcha" value="false">
+                            <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html">
                             <div class="mb-3">
                                 <label for="contactName" class="form-label">Full Name</label>
                                 <input type="text" class="form-control" id="contactName" required>
@@ -725,7 +774,8 @@
                                 <label for="contactMessage" class="form-label">Your Message</label>
                                 <textarea class="form-control" id="contactMessage" rows="5" required></textarea>
                             </div>
-                            <button type="submit" class="btn btn-primary">Send Message <i class="bi bi-send-fill ms-2"></i></button>
+                            <button type="submit" class="btn btn-primary">Send Message <i
+                                    class="bi bi-send-fill ms-2"></i></button>
                         </form>
                     </div>
                 </div>
@@ -734,21 +784,20 @@
                 <div class="col-lg-5">
                     <div class="info-card">
                         <h2>Contact Information</h2>
-                        
+
                         <div class="info-item">
                             <i class="bi bi-geo-alt-fill"></i>
                             <div>
                                 <h6>Head Office</h6>
-                                <p>Stepway Technologies
-Bayewu Village, Ibadan, Oyo State, Nigeria</p>
+                                <p>Stepway Technologies, Ibadan, Oyo State, Nigeria</p>
                             </div>
                         </div>
 
                         <div class="info-item">
                             <i class="bi bi-telephone-fill"></i>
                             <div>
-                                <h6>Phone Support</h6>
-                                <p>General:  +44 7440 307 875<br>Support: +234 706 180 9292</p>
+                                <h6>Phone &  whatsapp</h6>
+                                <p>General (call/message/WhatsApp):: +44 7440 307 875<br>Support (WhatsApp): <br>+234 706 180 9292</p>
                             </div>
                         </div>
 
@@ -756,8 +805,10 @@ Bayewu Village, Ibadan, Oyo State, Nigeria</p>
                             <i class="bi bi-envelope-fill"></i>
                             <div>
                                 <h6>Email Us</h6>
-                                <p>General:info@stepwaytechnologies.com
-<br>Support: help@stepwaytech.com</p>
+                                <p>General:
+                                    <br>info@stepwaytechnologies.com
+                                    <br>Support: support@stepwaytechnologies.com
+                                </p>
                             </div>
                         </div>
 
@@ -766,7 +817,7 @@ Bayewu Village, Ibadan, Oyo State, Nigeria</p>
                             <div>
                                 <h6>Business Hours</h6>
                                 <p>Mon–Fri: 09:00–18:00 (WAT, UTC+1) <br>
-Sat: 10:00–16:00 (WAT, UTC+1)</p>
+                                    Sat: 10:00–16:00 (WAT, UTC+1)</p>
                             </div>
                         </div>
                     </div>
@@ -779,27 +830,25 @@ Sat: 10:00–16:00 (WAT, UTC+1)</p>
             <div class="container">
                 <h2 class="text-center mb-4">Find Our Location</h2>
                 <div class="map-placeholder">
-                   <!-- Alternative: Embedded Google Maps iframe (no API key needed) -->
-<div class="map-container">
-    <iframe 
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d253218.867503259!2d3.682449223242461!3d7.377491499999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zN8KwMjInMzkuMCJOIDPCsDU1JzAwLjAiRQ!5e0!3m2!1sen!2sng!4v1620000000000!5m2!1sen!2sng" 
-         height="500%" 
-        style="border:0;" 
-        allowfullscreen="" 
-        loading="lazy">
-    </iframe>
-</div>
+                    <!-- Alternative: Embedded Google Maps iframe (no API key needed) -->
+                    <div class="map-container">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d253218.867503259!2d3.682449223242461!3d7.377491499999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zN8KwMjInMzkuMCJOIDPCsDU1JzAwLjAiRQ!5e0!3m2!1sen!2sng!4v1620000000000!5m2!1sen!2sng"
+                            height="500%" style="border:0;" allowfullscreen="" loading="lazy">
+                        </iframe>
+                    </div>
                 </div>
             </div>
         </section>
-        
+
         <!-- --- Instant Support Section --- -->
         <section class="support-section">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-md-8 text-md-start">
                         <h3>Need Instant Support?</h3>
-                        <p class="mb-3 mb-md-0">Our support team is available via our live chat widget during business hours.</p>
+                        <p class="mb-3 mb-md-0">Our support team is available via our live chat widget during business
+                            hours.</p>
                     </div>
                     <div class="col-md-4 text-md-end">
                         <a href="chat-popup.html" class="btn btn-outline-primary">Launch Live Chat</a>
@@ -813,10 +862,13 @@ Sat: 10:00–16:00 (WAT, UTC+1)</p>
             <div class="container">
                 <h4 class="mb-4">Connect With Us on Social Media</h4>
                 <div class="social-icon-lg">
-                    <a href="https://www.linkedin.com/company/stepwaytechnologies/" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
-                    <a href="https://www.facebook.com/profile.php?id=61582686912437" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                    <a href="https://www.linkedin.com/company/stepwaytechnologies/" aria-label="LinkedIn"><i
+                            class="bi bi-linkedin"></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=61582686912437" aria-label="Facebook"><i
+                            class="bi bi-facebook"></i></a>
                     <a href="#" aria-label="Twitter"><i class="bi bi-twitter"></i></a>
-                    <a href="https://www.instagram.com/stepwaytechnologies" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                    <a href="https://www.instagram.com/stepwaytechnologies" aria-label="Instagram"><i
+                            class="bi bi-instagram"></i></a>
                 </div>
             </div>
         </section>
@@ -830,13 +882,18 @@ Sat: 10:00–16:00 (WAT, UTC+1)</p>
                 <div class="col-lg-4 col-md-12">
                     <h5 class="logo-font">Stepway Technologies</h5>
                     <p class="pe-3">
-                        Connecting education, technology, and emotional intelligence to create meaningful impact for individuals and organizations.
+                        Connecting education, technology, and emotional intelligence to create meaningful impact for
+                        individuals and organizations.
                     </p>
                     <div class="social-icons mt-3">
-                        <a href="https://www.linkedin.com/company/stepwaytechnologies/" class="btn btn-sm btn-primary" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
-                        <a href="https://www.facebook.com/profile.php?id=61582686912437" class="btn btn-sm btn-primary" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-                        <a href="#" class="btn btn-sm btn-primary" aria-label="Twitter"><i class="bi bi-twitter"></i></a>
-                        <a href="https://www.instagram.com/stepwaytechnologies" class="btn btn-sm btn-primary" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="https://www.linkedin.com/company/stepwaytechnologies/" class="btn btn-sm btn-primary"
+                            aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=61582686912437" class="btn btn-sm btn-primary"
+                            aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="btn btn-sm btn-primary" aria-label="Twitter"><i
+                                class="bi bi-twitter"></i></a>
+                        <a href="https://www.instagram.com/stepwaytechnologies" class="btn btn-sm btn-primary"
+                            aria-label="Instagram"><i class="bi bi-instagram"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-2 col-md-4 col-6">
@@ -872,10 +929,10 @@ Sat: 10:00–16:00 (WAT, UTC+1)</p>
             </div>
             <div class="row mt-4">
                 <div class="col-12">
-                     <ul class="list-unstyled contact-info d-md-flex justify-content-center">
+                    <ul class="list-unstyled contact-info d-md-flex justify-content-center">
                         <li class="mb-2 mb-md-0 me-md-4">
                             <i class="bi bi-geo-alt-fill"></i>
-                            Stepway Technologies Bayewu Village, Ibadan, Oyo State, Nigeria
+                            Stepway Technologies, Ibadan, Oyo State, Nigeria
                         </li>
                         <li class="mb-2 mb-md-0 me-md-4">
                             <i class="bi bi-telephone-fill"></i>
@@ -895,33 +952,35 @@ Sat: 10:00–16:00 (WAT, UTC+1)</p>
         </div>
     </footer>
 
-   <!-- Floating Chat Icon -->
-<a href="javascript:void(0)" class="chat-float-icon" aria-label="Open Chat" onclick="openChatPopup()">
-    <i class="bi bi-chat-right-dots-fill"></i>
-</a>
+    <!-- Floating Chat Icon -->
+    <a href="javascript:void(0)" class="chat-float-icon" aria-label="Open Chat" onclick="openChatPopup()">
+        <i class="bi bi-chat-right-dots-fill"></i>
+    </a>
 
     <!-- Bootstrap JS Bundle -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        crossorigin="anonymous"></script>
 
-<script>
-    // Form submission handling
-document.querySelectorAll('form').forEach(form => {
-    form.addEventListener('submit', function(e) {
-        const submitBtn = this.querySelector('button[type="submit"]');
-        const originalText = submitBtn.innerHTML;
-        
-        // Show loading state
-        submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Sending...';
-        submitBtn.disabled = true;
-        
-        // Re-enable after 5 seconds if still on page
-        setTimeout(() => {
-            submitBtn.innerHTML = originalText;
-            submitBtn.disabled = false;
-        }, 5000);
-    });
-});
-</script>
+    <script>
+        // Form submission handling
+        document.querySelectorAll('form').forEach(form => {
+            form.addEventListener('submit', function (e) {
+                const submitBtn = this.querySelector('button[type="submit"]');
+                const originalText = submitBtn.innerHTML;
+
+                // Show loading state
+                submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Sending...';
+                submitBtn.disabled = true;
+
+                // Re-enable after 5 seconds if still on page
+                setTimeout(() => {
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                }, 5000);
+            });
+        });
+    </script>
     <script src="assets/js/chatbot.js"></script>
 </body>
+
 </html>

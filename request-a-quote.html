@@ -86,10 +86,11 @@
         /* --- Hero Section - Request a Quote --- */
         .hero-quote-section {
             /* background-color: var(--stepway-blue); */
-            background-image: linear-gradient(rgba(15, 25, 87, 0.511), rgba(15, 25, 87, 0.534)), url('/img/request.jpeg');
+            background-image: linear-gradient(rgba(15, 25, 87, 0.511), rgba(15, 25, 87, 0.534)), url('/img/request\ a\ quote.jpg');
              background-size: cover;
-            background-position: center;
-            padding: 15rem 0 3rem 0; /* Shorter header above the form */
+            background-position:  center ;
+            object-position: top  ;
+            padding: 20rem 0 5rem 0; /* Shorter header above the form */
             color: #ffffff;
             text-align: center;
         }
@@ -674,6 +675,10 @@
                                 <div class="mb-4">
                                     <label for="fullName" class="form-label">Full Name <span class="text-danger">*</span></label>
                                     <input type="text" class="form-control" id="fullName" placeholder="Your name" required>
+                                </div>
+                                  <div class="mb-4">
+                                    <label for="phone" class="form-label">phone Number <span class="text-danger">*</span></label>
+                                    <input type="tel" class="form-control" id="phoneNumber" placeholder="+(000) 000 000" required>
                                 </div>
                                 <div class="mb-4">
                                     <label for="email" class="form-label">Email Address <span class="text-danger">*</span></label>
