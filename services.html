@@ -191,6 +191,62 @@
             height: 10px;
             border-radius: 50%;
         }
+          /* Social Media Carousel */
+        .social-carousel {
+            background-color: var(--stepway-card-bg);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin: 2rem 0;
+        }
+        .social-carousel .carousel-item {
+            text-align: center;
+        }
+        .social-carousel .carousel-control-prev,
+        .social-carousel .carousel-control-next {
+            width: 5%;
+        }
+        .social-embed-container {
+            display: flex;
+            justify-content: center;
+            margin: 1rem 0;
+        }
+        .social-embed-container iframe {
+            max-width: 100%;
+        }
+
+        /* Testimonial Facebook Posts */
+        .testimonial-facebook-container {
+            display: flex;
+            justify-content: center;
+            margin: 1rem 0;
+        }
+        .testimonial-facebook-container iframe {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .hero-section h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero-section p {
+                font-size: 1.1rem;
+            }
+            
+            .section-padding {
+                padding: 3rem 0;
+            }
+            
+            .social-embed-container iframe,
+            .testimonial-facebook-container iframe {
+                width: 100% !important;
+            }
+        }
+
         
         /* --- CTA Section --- */
         .cta-section {
@@ -868,28 +924,24 @@
       
 
         <!-- --- Testimonials Section (from image_1d547a.png) --- -->
-        <section class="section-padding" style="background-color: #f1f3f5;">
+        <!-- --- Testimonials Section --- -->
+        <section class="section-padding testimonial" >
             <div class="container">
                 <div class="text-center mb-5">
-                    <h2 class="display-5">What Our Clients Say</h2>
+                    <h2 class="display-5">What Our people Say</h2>
                 </div>
                 <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-indicators">
                         <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                         <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
                     </div>
                     <div class="carousel-inner">
                         <div class="carousel-item active">
                             <div class="row justify-content-center">
                                 <div class="col-lg-8">
-                                    <div class="testimonial-card text-center">
-                                        <!-- Placeholder image for testimonial -->
-                                        <img src="https://placehold.co/80x80/0F1957/FFFFFF?text=JS" alt="Jane Smith" class="mx-auto">
-                                        <blockquote>
-                                            "Stepway Academy transformed our team's capabilities. The mentorship program helped us upskill faster than we thought possible."
-                                        </blockquote>
-                                        <h6 class="name">Jane Smith, Tech Lead</h6>
-                                        <p class="title">Innovate Inc.</p>
+                                    <div class="testimonial-facebook-container">
+                                        <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fweb.facebook.com%2Fvictoriaomodolapo.asana%2Fposts%2Fpfbid0TGpFxFw6WxmCaGaXJSduvQfg6sTA9APTh9WNrfwC9xFBmPLTvE6sC7CJfqB3n2Kol&show_text=true&width=500" width="500" height="250" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
                                     </div>
                                 </div>
                             </div>
@@ -897,18 +949,30 @@
                         <div class="carousel-item">
                            <div class="row justify-content-center">
                                 <div class="col-lg-8">
-                                    <div class="testimonial-card text-center">
-                                        <img src="https://placehold.co/80x80/0F1957/FFFFFF?text=MD" alt="Mark Doe" class="mx-auto">
-                                        <blockquote>
-                                            "The custom e-learning platform they built for us is intuitive and scalable, perfectly meeting our training needs."
-                                        </blockquote>
-                                        <h6 class="name">Mark Doe, Director of L&D</h6>
-                                        <p class="title">Corporate Solutions</p>
+                                    <div class="testimonial-facebook-container">
+                                        <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fweb.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0QrvAae7oH1WF3hagsm9RNu5kdgDaEBEK4nUCEqCHpX4aJb9AeKXsQFB26X781x8Rl%26id%3D61575855240593&show_text=true&width=500" width="500" height="304" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                         <div class="carousel-item">
+                           <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <div class="testimonial-facebook-container">
+                                        <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fweb.facebook.com%2Felsa.jae.2025%2Fposts%2Fpfbid02B4BrPTW53BEio2CSigVWRvkeBVaq2fuNAK9753psduRuEijZRfuuNn7X1xKKFjkAl&show_text=true&width=500" width="500" height="250" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
                 </div>
             </div>
         </section>
