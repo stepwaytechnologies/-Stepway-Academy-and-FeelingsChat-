@@ -70,24 +70,22 @@
             padding: 0.5rem 1rem;
             border-radius: 6px;
         }
-            .navbar-nav .nav-link:hover{
+        .navbar-nav .nav-link:hover{
             color: #0d6efd;
         }
         .navbar-nav .nav-link.active {
-            
             text-decoration: underline;
-             text-decoration-thickness: 2px;
-  text-underline-offset: 4px;
+            text-decoration-thickness: 2px;
+            text-underline-offset: 4px;
         }
         
-        /* --- Blog Hero Section (image_1ce49b.png) --- */
+        /* --- Blog Hero Section --- */
         .blog-hero-section {
             background-color: var(--stepway-blue);
-            /* Placeholder image matching the visual style of the header */
             background-image: linear-gradient(rgba(15, 25, 87, 0.75), rgba(15, 25, 87, 0.75)), url('img/Design\ a\ distinct\ and\ playful\ book\ cover\ on\ deep\ learning\ _\ Book\ cover\ contest.jpeg'); 
             background-size: cover;
             background-repeat: no-repeat;
-            background-position: top,;
+            background-position: top;
             padding: 5rem 0 3rem 0;
             color: #ffffff;
             text-align: center;
@@ -120,9 +118,8 @@
             padding: 2rem;
         }
         .featured-article .book-cover {
-            /* Using placeholder image for the book cover */
-            background-image: url('img/Stand\ Out\ on\ the\ Shelf\ or\ Screen.jpeg');
-            background-size: contain;
+            background-image: url('img/our\ mission\ blog.png');
+            background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
             height: 350px;
@@ -146,12 +143,13 @@
             background-color: var(--stepway-card-bg);
             border-radius: 10px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-            transition: box-shadow 0.3s;
+            transition: box-shadow 0.3s, transform 0.3s;
             overflow: hidden;
             height: 100%; 
         }
         .article-card:hover {
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            transform: translateY(-5px);
         }
         .article-card .card-img-top {
             height: 300px;
@@ -162,6 +160,9 @@
         }
         .article-card .card-body {
             padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
         .article-card .card-title {
             font-size: 1.15rem;
@@ -175,6 +176,82 @@
             color: var(--stepway-accent);
             margin-bottom: 0.5rem;
             display: block;
+        }
+        
+        /* Professional Read More Functionality */
+        .blog-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+            margin-top: 1rem;
+        }
+        .blog-content.expanded {
+            max-height: 3000px;
+        }
+        .read-more-btn {
+            background-color: transparent;
+            border: 2px solid var(--stepway-blue);
+            color: var(--stepway-blue);
+            padding: 0.5rem 1.5rem;
+            border-radius: 30px;
+            font-weight: 500;
+            margin-top: 1.5rem;
+            transition: all 0.3s ease;
+            align-self: flex-start;
+        }
+        .read-more-btn:hover {
+            background-color: var(--stepway-blue);
+            color: white;
+        }
+        .read-more-btn.expanded {
+            background-color: var(--stepway-blue);
+            color: white;
+        }
+        .read-more-btn i {
+            transition: transform 0.3s ease;
+        }
+        .read-more-btn.expanded i {
+            transform: rotate(180deg);
+        }
+        
+        /* Blog content styling */
+        .key-features, .benefits {
+            background-color: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+        .key-features h5, .benefits h5 {
+            color: var(--stepway-blue);
+            margin-bottom: 1rem;
+        }
+        .key-features ul, .benefits ul {
+            padding-left: 1.5rem;
+        }
+        .key-features li, .benefits li {
+            margin-bottom: 0.5rem;
+        }
+        .get-started {
+            background-color: var(--stepway-blue);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+        .get-started h5 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+        
+        /* Social Media Embed Styling */
+        .social-embed {
+            margin: 2rem 0;
+            display: flex;
+            justify-content: center;
+        }
+        .social-embed iframe {
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
 
         /* --- Sidebar Styles --- */
@@ -191,7 +268,7 @@
             width: 100%;
         }
 
-        /* Share Insight Section (image_1ce496.png) */
+        /* Share Insight Section */
         .share-insight-section {
             background-color: #f0f4f8; 
             padding: 4rem 0;
@@ -263,345 +340,75 @@
             transform: scale(1.1);
         }
 
-.form-control:valid {
-    border-color: #198754;
-}
-
-.form-control:invalid {
-    border-color: #dc3545;
-}
-
-.form-feedback {
-    display: none;
-    font-size: 0.875rem;
-}
-
-.form-control:invalid + .form-feedback {
-    display: block;
-}
-
-/* Chat Popup Styles - Matching chat-popup.html design */
-.chat-popup-container {
-    position: fixed;
-    bottom: 90px;
-    right: 25px;
-    width: 380px;
-    height: 600px;
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-    z-index: 1060;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    font-family: 'Roboto', sans-serif;
-}
-
-.chat-header {
-    background-color: var(--stepway-blue);
-    color: white;
-    padding: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.chat-header .status {
-    font-size: 0.8rem;
-    color: #ccc;
-}
-
-.chat-messages {
-    flex-grow: 1;
-    padding: 1rem;
-    overflow-y: auto;
-    background-color: #f7f9fb;
-}
-
-.message-bubble {
-    max-width: 85%;
-    padding: 0.75rem 1rem;
-    border-radius: 12px;
-    margin-bottom: 1rem;
-    word-wrap: break-word;
-}
-
-.assistant-bubble {
-    background-color: white;
-    color: #333;
-    border-top-left-radius: 4px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-}
-
-.user-bubble {
-    background-color: var(--stepway-blue);
-    color: white;
-    margin-left: auto;
-    border-top-right-radius: 4px;
-}
-
-.chat-actions {
-    margin-top: 1rem;
-}
-
-.quick-action-btn {
-    background-color: white;
-    color: var(--stepway-blue);
-    border: 1px solid var(--stepway-blue);
-    padding: 0.6rem 1rem;
-    border-radius: 8px;
-    font-weight: 500;
-    font-size: 0.9rem;
-    transition: all 0.2s;
-    width: 100%;
-    text-align: left;
-    margin-bottom: 0.5rem;
-}
-
-.quick-action-btn:hover {
-    background-color: var(--stepway-blue);
-    color: white;
-}
-
-.chat-form-container {
-    border-top: 1px solid #eee;
-    padding: 1rem;
-    background: white;
-}
-
-.chat-form-header h5 {
-    color: var(--stepway-blue);
-    margin-bottom: 0.5rem;
-    font-size: 1rem;
-}
-
-.chat-form-header p {
-    font-size: 0.85rem;
-    color: #666;
-    margin-bottom: 1rem;
-}
-
-.form-group {
-    margin-bottom: 1rem;
-}
-
-.form-group label {
-    display: block;
-    font-size: 0.85rem;
-    font-weight: 500;
-    margin-bottom: 0.25rem;
-    color: #333;
-}
-
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 0.5rem;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 0.85rem;
-    font-family: 'Roboto', sans-serif;
-    box-sizing: border-box;
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-    outline: none;
-    border-color: var(--stepway-blue);
-}
-
-.chat-start-btn {
-    width: 100%;
-    background-color: var(--stepway-blue);
-    color: white;
-    border: none;
-    padding: 0.75rem;
-    border-radius: 6px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: background-color 0.2s;
-}
-
-.chat-start-btn:hover {
-    background-color: #0c1445;
-}
-
-.chat-input-area {
-    border-top: 1px solid #eee;
-    padding: 0.75rem 1rem;
-    display: flex;
-    align-items: center;
-    background: white;
-}
-
-.chat-input {
-    flex-grow: 1;
-    border: none;
-    outline: none;
-    padding: 0.5rem;
-    border-radius: 0;
-    background-color: white;
-    font-size: 0.9rem;
-}
-
-.input-icon {
-    color: #666;
-    cursor: pointer;
-    margin-left: 0.75rem;
-}
-
-.chat-footer {
-    padding: 0.75rem;
-    display: flex;
-    justify-content: space-around;
-    border-top: 1px solid #eee;
-    background: white;
-}
-
-.footer-btn {
-    background: none;
-    border: none;
-    color: #666;
-    font-size: 0.9rem;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    padding: 0.5rem;
-    border-radius: 4px;
-    transition: background-color 0.2s;
-}
-
-.footer-btn:hover {
-    background-color: #f5f5f5;
-}
-
-/* Make it responsive */
-@media (max-width: 768px) {
-    .chat-popup-container {
-        width: 100%;
-        height: 100%;
-        bottom: 0;
-        right: 0;
-        border-radius: 0;
-    }
-    
-    .chat-float-icon {
-        bottom: 20px;
-        right: 20px;
-    }
-}
-
-/* Animation for chat popup */
-.chat-popup-container {
-    animation: slideInUp 0.3s ease-out;
-}
-
-@keyframes slideInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Text colors for time */
-.text-xs {
-    font-size: 0.75rem;
-}
-
-.text-gray-400 {
-    color: #9ca3af;
-}
-
-.text-white {
-    color: white;
-}
-
-.text-lg {
-    font-size: 1.125rem;
-}
-
-.font-semibold {
-    font-weight: 600;
-}
-
-/* Flex utilities */
-.flex {
-    display: flex;
-}
-
-.items-center {
-    align-items: center;
-}
-
-.mr-1 {
-    margin-right: 0.25rem;
-}
-
-.mr-3 {
-    margin-right: 0.75rem;
-}
-
-.ml-2 {
-    margin-left: 0.5rem;
-}
-
-.mt-1 {
-    margin-top: 0.25rem;
-}
-
-.mt-3 {
-    margin-top: 0.75rem;
-}
-
-.mb-3 {
-    margin-bottom: 0.75rem;
-}
-
-.space-y-2 > * + * {
-    margin-top: 0.5rem;
-}
-
-.flex-col {
-    flex-direction: column;
-}
-
-/* Status indicator */
-.inline-block {
-    display: inline-block;
-}
-
-.w-2 {
-    width: 0.5rem;
-}
-
-.h-2 {
-    height: 0.5rem;
-}
-
-.bg-green-400 {
-    background-color: #4ade80;
-}
-
-.rounded-full {
-    border-radius: 9999px;
-}
-
-.cursor-pointer {
-    cursor: pointer;
-}
-
-.text-blue-600 {
-    color: #2563eb;
-}
-
-.text-xl {
-    font-size: 1.25rem;
-}
-
+        /* Additional styling for blog content */
+        .recent-post-item {
+            display: flex;
+            align-items: center;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #eee;
+            text-decoration: none;
+            color: var(--stepway-text-dark);
+        }
+        .recent-post-item:last-child {
+            border-bottom: none;
+        }
+        .recent-post-item img {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 6px;
+            margin-right: 1rem;
+        }
+        .post-info div {
+            font-weight: 500;
+            margin-bottom: 0.25rem;
+        }
+        .post-info small {
+            color: var(--stepway-text-light);
+        }
+        .category-list a {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+            text-decoration: none;
+            color: var(--stepway-text-dark);
+        }
+        .category-list a:last-child {
+            border-bottom: none;
+        }
+        .search-form {
+            display: flex;
+        }
+        .search-form input {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+        .search-form button {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+        
+        /* Social Media Carousel */
+        .social-carousel {
+            background-color: var(--stepway-card-bg);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin: 2rem 0;
+        }
+        .social-carousel .carousel-item {
+            text-align: center;
+        }
+        .social-carousel .carousel-control-prev,
+        .social-carousel .carousel-control-next {
+            width: 5%;
+        }
+        .social-embed-container {
+            display: flex;
+            justify-content: center;
+            margin: 1rem 0;
+        }
     </style>
 </head>
 <body>
@@ -636,13 +443,6 @@
                     <li class="nav-item">
                         <a class="nav-link" href="contact-us.html">Contact Us</a>
                     </li>
-                    <!-- This "Send More" button isn't on the main nav, but from a sub-page.
-                         I'll add it as an example of the blue button. -->
-                    <!-- 
-                    <li class="nav-item ms-lg-2">
-                        <a class="nav-link btn-nav" href="#">Send More</a>
-                    </li>
-                    -->
                 </ul>
             </div>
         </div>
@@ -659,22 +459,109 @@
     </header>
 
     <main class="mt-5">
+        <!-- --- Social Media Carousel --- -->
+        <!-- <section class="container">
+            <div class="social-carousel">
+                <h3 class="text-center mb-4">Latest Updates From Our Social Channels</h3>
+                <div id="socialCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#socialCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#socialCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#socialCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="social-embed-container">
+                                <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fweb.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0F4v4cZjxprAJFyH4ZovBuudmk5joRBKodEegx9AK5vi56s4Yry41Ks8EvrWiWxEyl%26id%3D61582686912437&show_text=true&width=500" width="500" height="250" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                            </div>
+                            <p class="text-center mt-3">Posted on November 3, 2024</p>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="social-embed-container">
+                                <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7391008598455148545?collapsed=1" height="670" width="504" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
+                            </div>
+                            <p class="text-center mt-3">Posted on LinkedIn</p>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="social-embed-container">
+                                <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/DQlhPTWDE74/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/p/DQlhPTWDE74/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">View this post on Instagram</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/p/DQlhPTWDE74/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">A post shared by Stepway Technologies (@stepwaytechnologies)</a></p></div></blockquote>
+                            </div>
+                            <p class="text-center mt-3">Posted on Instagram</p>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#socialCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#socialCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+        </section> -->
+
         <!-- --- Featured Article Section --- -->
-        <section class="container pb-5 ">
+        <section class="container pb-5" id="our_mission">
             <div class="featured-article row align-items-center g-4">
                 <div class="col-lg-5">
                     <div class="book-cover"></div>
                 </div>
                 <div class="col-lg-7">
-                    <span class="category-badge">Emotional AI</span>
-                    <h3>How Emotional AI is Transforming Education and Workplace Training</h3>
+                    <span class="category-badge">Company Vision</span>
+                    <h3>Why Stepway? — Our Mission, Methods, and People</h3>
                     <div class="metadata">
-                        <span>By Dr. Serena Goebel</span> | <span>March 15, 2025</span>
+                        <span>By Bamikole Olaleye Akinsehinde</span> | <span>April 10, 2025</span>
                     </div>
                     <p class="text-dark">
-                        Discover how emotional intelligence combined with AI is revolutionizing personalized learning and corporate environments. Learn about the technology driving better communication and stronger team dynamics.
+                        Our mission is to build knowledge, technology, and connections that matter. We exist for learners who want to turn effort into employability, for teams who want tools they can rely on, and for communities that deserve solutions built with care.
                     </p>
-                    <a href="#" class="btn btn-primary" style="padding: 0.6rem 1.25rem;">Read Full Story <i class="bi bi-arrow-right"></i></a>
+                    <p class="text-dark">
+                        This is why our two flagship products sit inside the same company as our client services: education sharpens delivery; delivery informs education; both are anchored in empathy for the people who use what we build.
+                    </p>
+                    
+                    <div class="blog-content" id="featured-content">
+                        <p>The Stepway method begins with clarity. We define the problem in terms that stakeholders agree on, along with the measures by which progress will be judged. We then design with the end user in mind, carrying accessibility, security, and maintainability all the way from wireframe to release.</p>
+                        
+                        <p>Delivery happens in iterations with visible checkpoints, so surprises are replaced by evidence. Development continues after launch through monitoring, documentation, and training that makes clients independent rather than dependent.</p>
+                        
+                        <p>This is as true for a small team launching their first site as it is for a department deploying an AI assistant or a school rolling out a blended learning program. People notice the difference in the artefacts we leave behind.</p>
+                        
+                        <p>Academy graduates show portfolios that employers can verify, not lists of videos they watched. FeelingsChat cultivates patterns of use that are gentle and durable rather than spiky and short-lived. Client projects ship with runbooks, tests, and dashboards that make operations calmer.</p>
+                        
+                        <p>We also invest in routes that widen access, including verified pathways for underprivileged learners who meet community criteria. A broader talent base is not charity; it is strategy.</p>
+                        
+                        <p>We are not enamoured with shine for its own sake. Performance, data integrity, and security are non-negotiable, even when no one is looking. We document decisions so new team members can join without folklore.</p>
+                        
+                        <p>We reject black-box AI that cannot be governed and instead deliver systems whose behaviour, costs, and risks are understood. When we fall short, we say so and fix it. Trust is built in small moments.</p>
+                        
+                        <div class="key-features">
+                            <h5>KEY FEATURES:</h5>
+                            <ul>
+                                <li>Outcome-driven approach</li>
+                                <li>Focus on empathy and user experience</li>
+                                <li>Commitment to performance, security, and data integrity</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="benefits">
+                            <h5>BENEFITS:</h5>
+                            <ul>
+                                <li>Build solutions that matter</li>
+                                <li>Improve efficiency and productivity</li>
+                                <li>Enhance customer experience and engagement</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="get-started">
+                            <h5>GET STARTED:</h5>
+                            <p>If you want to work with a partner that teaches by doing and delivers with humility, start a conversation. You can request a quote for your project, explore Stepway Academy if you are growing your skills or your team's capability, or try FeelingsChat if you are building healthier communication at home, in school, or at work.</p>
+                        </div>
+                    </div>
+                    
+                    <button class="read-more-btn" onclick="toggleContent('featured-content', this)">
+                        Read Full Story <i class="bi bi-chevron-down ms-2"></i>
+                    </button>
                 </div>
             </div>
         </section>
@@ -689,56 +576,244 @@
                         <h2 class="mb-4 text-center text-lg-start">Latest Articles</h2>
                         <div class="row g-4">
                             
-                            <!-- Article 1 -->
+                            <!-- Article 1: How We Deliver Value -->
                             <div class="col-md-6">
-                                <a href="#" class="article-card d-block text-decoration-none">
-                                    <img src="img/Cover design of the book “PRAYERS IS THE KEY TO YOUR LIFE”_.jpeg" class="card-img-top" alt="Code Snippet">
+                                <div class="article-card">
+                                    <img src="img/deliver value-blog.png" class="card-img-top" alt="Code Snippet">
+                                    <div class="card-body">
+                                        <span class="category-badge">Services</span>
+                                        <h4 class="card-title">How We Deliver Value — The Stepway Services Approach</h4>
+                                        <p class="card-text">Successful delivery is less about a menu of offerings and more about how those offerings come together to solve a real problem. Instead of listing services line by line, we align around outcomes that organisations care about...</p>
+                                        
+                                        <div class="blog-content" id="article1-content">
+                                            <p>When a client comes to us for a new website, they get accessible design that loads quickly on poor connections, content that resonates with the audience they actually have, and analytics that make sense to leaders who must justify their spend. If the brief extends to mobile, we design journeys around the tiny interruptions of everyday life so the app feels supportive rather than demanding.</p>
+                                            
+                                            <p>Where education is the need, we build learning environments with clear progression, verifiable credentials, and live-session options that work in low-bandwidth contexts. On the data side, we begin with source-of-truth mapping, then move into dashboards that tell stories honestly.</p>
+                                            
+                                            <p>That often means aligning finance, operations, and sales on the definitions behind numbers rather than just the look of the charts. From there, it is natural to explore predictive questions—but always with evaluation and monitoring so leaders can trust the lift they see.</p>
+                                            
+                                            <p>We deploy to cloud environments that are right-sized rather than over-engineered, using containers and infrastructure as code to keep changes traceable and rollbacks uneventful. Databases are secured by design, with backups and access policies that age well.</p>
+                                            
+                                            <p>Where conversational automation helps, we build assistants that integrate knowledge rather than hallucinate it, and we pair them with escalation paths to people who can help when nuance matters. Security runs through all of this.</p>
+                                            
+                                            <p>We test what we build and what we inherit, from penetration assessments to secure pipelines that guard the software supply chain. When organisations need to move to the cloud, we plan migrations that minimise downtime and quietly improve performance.</p>
+                                            
+                                            <p>For research questions and innovation pilots, our team blends scientific discipline with product sense—clean data, reproducible notebooks, careful assumptions, and a clear thread from result to recommendation.</p>
+                                            
+                                            <p>For schools and training divisions, we tailor the Stepway Academy approach to the local context, then back it with mentorship that makes skills stick. Even when the focus is sustainability or climate risk, the goal is practical insight: emissions accounted for and reported properly, spatial analyses that guide the next budget decision, and dashboards that a board can read in five minutes without a translator.</p>
+                                            
+                                            <p>Consider a typical story. A regional retailer asks for "better analytics." Two previous vendors delivered visuals that were attractive but inconsistent with finance. We start by reconciling definitions, create contracts around the key measures, and build an interactive board where inventory risk and demand signals meet. Within a quarter, stockouts drop, over-ordering eases, and the CFO trusts the line item because the numbers foot.</p>
+                                            
+                                            <p>That is our service philosophy in a sentence: fewer promises, more proof.</p>
+                                            
+                                            <div class="key-features">
+                                                <h5>KEY FEATURES:</h5>
+                                                <ul>
+                                                    <li>Outcome-driven approach</li>
+                                                    <li>Expertise in digital strategy, web and mobile development, data analytics, and learning systems</li>
+                                                    <li>Focus on security, scalability, and maintainability</li>
+                                                </ul>
+                                            </div>
+                                            
+                                            <div class="benefits">
+                                                <h5>BENEFITS:</h5>
+                                                <ul>
+                                                    <li>Solve real problems with tangible outcomes</li>
+                                                    <li>Improve efficiency and productivity</li>
+                                                    <li>Enhance customer experience and engagement</li>
+                                                </ul>
+                                            </div>
+                                            
+                                            <div class="get-started">
+                                                <h5>GET STARTED:</h5>
+                                                <p>If you have a project in mind, you can start a short brief and request a quote, or speak to a solutions lead who will help shape your scope before a single task is booked. Delivery begins with clarity, and clarity is the fastest way to value.</p>
+                                            </div>
+                                        </div>
+                                        
+                                        <button class="read-more-btn" onclick="toggleContent('article1-content', this)">
+                                            Read More <i class="bi bi-chevron-down ms-2"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Article 2: Stepway Academy -->
+                            <div class="col-md-6">
+                                <div class="article-card">
+                                    <img src="img/learn wrk-blog.png"  class="card-img-top" alt="Brain Diagram">
+                                    <div class="card-body">
+                                        <span class="category-badge">Education</span>
+                                        <h4 class="card-title">Stepway Academy — Learn, Work, and Develop in One Seamless Journey</h4>
+                                        <p class="card-text">Most training programs focus on content; we focus on capability. Stepway Academy is built for people who want to translate learning into tangible, verifiable outcomes. Rather than publishing a shopping list of modules...</p>
+                                        
+                                        <div class="blog-content" id="article2-content">
+                                            <p>Learners start by becoming truly comfortable with computers, the operating systems they use, and the everyday tools that drive productivity. They set up software safely, understand how the command line accelerates serious work, and produce documents, spreadsheets, presentations, and simple designs that already meet professional standards. This early foundation clears the way for the more technical stages without intimidation.</p>
+                                            
+                                            <p>Once the basics are lived-in, the journey turns data into decisions. Learners move from spreadsheet literacy to building interactive business dashboards, and then to a modern analytics stack where measures are traceable and stories are persuasive. The emphasis is not on memorising features but on building the kind of KPI views that boards and line managers actually use, including time-aware analysis and governance that prevents guesswork.</p>
+                                            
+                                            <p>As confidence deepens, the Academy opens the door to predictive thinking. Programming skills come to life in the context of real datasets; statistical discipline grounds every model; exploration and data cleaning become second nature; and supervised and unsupervised techniques are selected with the humility of evidence. Evaluation is treated as a safeguard, so graduates can defend their results and their ethics.</p>
+                                            
+                                            <p>For learners who want to ship AI rather than just discuss it, the path extends into modern machine learning and large language model practice. Here, neural networks are not mystical; they are engineered. Prompting is a tool, not a crutch. Retrieval methods connect AI to company knowledge responsibly, while safety layers and cost controls keep solutions trustworthy and sustainable.</p>
+                                            
+                                            <p>Computer vision takes the same philosophy into images and video, from basic processing through practical detection and segmentation to deployment on constrained devices where latency and battery matter. Intelligent decision systems add interpretable approaches like rules and fuzzy logic and extend to reinforcement learning and optimisation so graduates can model choices under uncertainty.</p>
+                                            
+                                            <p>Security is treated as everyone's job, not an afterthought, so threat awareness, ethical testing, application hardening, and governance become habits. This mindset flows into software engineering and product delivery, where clean code, version control, backend and frontend skills, UX, testing, and release automation culminate in full-stack applications that are observable in production.</p>
+                                            
+                                            <p>DevOps and MLOps unify the software and data worlds with pipelines, containers, infrastructure as code, and monitoring that turn prototypes into systems. For those planning at scale, architecture and cost modelling, edge processing, accelerated computing, and event-driven patterns enable designs that are both responsive and financially sane.</p>
+                                            
+                                            <p>Because technology ultimately serves society, the Academy dedicates space to civic and educational impact, to rigorous research that can stand up to peer scrutiny, and to climate and sustainability work that uses open datasets and transparent methods. Learners experience the rhythm of the scientific method, the discipline of reproducibility, and the responsibility of communicating results to people who do not share their vocabulary but do rely on their conclusions.</p>
+                                            
+                                            <p>At each stage, the Academy ties learning back to concrete artefacts—working dashboards, deployed services, verified models, reproducible reports, and policy-ready briefs—so graduates leave with proof of competence that employers and collaborators can verify through share-code credentials.</p>
+                                            
+                                            <p>To see how this plays out, imagine an operations analyst who is comfortable with spreadsheets but overwhelmed by conflicting reports. Within weeks they are building one authoritative dashboard with measures that finance and logistics both agree on, then pushing insights through a lightweight data platform that refreshes automatically. A few months later, the same learner prototypes a predictive model that flags stockouts before they happen, packages it into a safe service, and ships a small monitoring view that alerts the team when the model drifts.</p>
+                                            
+                                            <p>Nothing here is academic for its own sake; every step is built to land at work on Monday.</p>
+                                            
+                                            <div class="key-features">
+                                                <h5>KEY FEATURES:</h5>
+                                                <ul>
+                                                    <li>Practical digital confidence</li>
+                                                    <li>Advanced data and AI skills</li>
+                                                    <li>Software and cloud fluency</li>
+                                                    <li>Emphasis on tangible, verifiable outcomes</li>
+                                                </ul>
+                                            </div>
+                                            
+                                            <div class="benefits">
+                                                <h5>BENEFITS:</h5>
+                                                <ul>
+                                                    <li>Develop skills that employers value</li>
+                                                    <li>Build a portfolio of work that showcases your skills</li>
+                                                    <li>Learn from experienced professionals in the field</li>
+                                                </ul>
+                                            </div>
+                                            
+                                            <div class="get-started">
+                                                <h5>GET STARTED:</h5>
+                                                <p>If you're ready to move beyond watching videos and start building evidence, begin your pathway today. You can apply to learn, request a cohort for your team, or explore how the Academy supports verified routes for underprivileged learners who meet community criteria.</p>
+                                            </div>
+                                        </div>
+                                        
+                                        <button class="read-more-btn" onclick="toggleContent('article2-content', this)">
+                                            Read More <i class="bi bi-chevron-down ms-2"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Article 3: FeelingsChat -->
+                            <div class="col-md-6">
+                                <div class="article-card">
+                                    <img src="img/feeling chat-blog.png" class="card-img-top" alt="Data Graph">
+                                    <div class="card-body">
+                                        <span class="category-badge">Emotional Intelligence</span>
+                                        <h4 class="card-title">FeelingsChat — Emotional Intelligence That People Actually Use</h4>
+                                        <p class="card-text">Wellbeing apps often start with motivation and end with abandonment. FeelingsChat was designed to reverse that pattern by meeting people exactly at the moment of emotion and then guiding them, gently and consistently...</p>
+                                        
+                                        <div class="blog-content" id="article3-content">
+                                            <p>Before login, the experience is welcoming and simple: a calm message about expression and connection, a sense of what's possible, and immediate routes to begin. After login, the platform shifts into an environment that treats emotions as first-class data. A user doesn't just post; they choose how they feel, and the interface adapts—suggesting the right spaces, nudging healthier behaviours, and leaving room for privacy when a thought is not yet ready for others.</p>
+                                            
+                                            <p>Community is built around thoughtfully curated safe-spaces that emphasise tone and belonging. The directory makes it clear which rooms are open and which require a premium key, and inside each space the rhythm feels human: short updates, media when words are not enough, encouragement that counts, and activity views that spotlight helpful participation.</p>
+                                            
+                                            <p>For people who prefer to process privately, a personal inventory captures the arc of their inner life—text, voice, even short videos—with the option to share later if and when they choose. When someone needs gentle guidance, an AI companion offers brief check-ins, breathing prompts, small actions, and words that validate rather than judge.</p>
+                                            
+                                            <p>When the moment calls for human care, professional support is one step away with a booking flow that respects privacy and consent. The heartbeat of the product is routine without pressure. Short wellness tools create micro-habits, streaks reward consistency rather than perfection, and mood charts help people recognise patterns they can work with.</p>
+                                            
+                                            <p>Highlights turn good days and small wins into a story you can look back on. Rewards are meaningful: participation unlocks experiences the user actually wants, such as temporary access to new communities or a guided reflective session when life is heavy.</p>
+                                            
+                                            <p>Even the premium layer is honest about what it offers, with clear tooltips that explain expanded access or roaming between regions in plain language. Because emotional life is social, the platform supports connections that start with consent—requests are explicit, acceptance is visible, and private conversations respect boundaries.</p>
+                                            
+                                            <p>For organisations like schools, HR teams, or NGOs, the same design principles scale: anonymised insights where appropriate, strong privacy defaults, and ways to cultivate psychologically safer groups.</p>
+                                            
+                                            <p>Imagine a student who dreads Sunday nights; they record a private voice note, receive a short grounding exercise, and choose to share a public update that draws encouragement they didn't expect. A week later, their highlight reel shows two small wins that once would have gone unnoticed.</p>
+                                            
+                                            <p>That is the behaviour the product is built to sustain: low friction, high empathy, steady return.</p>
+                                            
+                                            <div class="key-features">
+                                                <h5>KEY FEATURES:</h5>
+                                                <ul>
+                                                    <li>Emotional intelligence development</li>
+                                                    <li>Personalized experience with adaptive interface</li>
+                                                    <li>Community features with safe spaces and expert support</li>
+                                                    <li>Focus on gentle guidance and consistent progress</li>
+                                                </ul>
+                                            </div>
+                                            
+                                            <div class="benefits">
+                                                <h5>BENEFITS:</h5>
+                                                <ul>
+                                                    <li>Develop emotional intelligence skills that last</li>
+                                                    <li>Connect with others in a safe and supportive community</li>
+                                                    <li>Improve relationships and well-being</li>
+                                                </ul>
+                                            </div>
+                                            
+                                            <div class="get-started">
+                                                <h5>GET STARTED:</h5>
+                                                <p>If you'd like to try FeelingsChat, you can start on the web immediately, download the app for a more personal daily rhythm, or speak to our team about private group deployments for families, schools, or workplaces.</p>
+                                            </div>
+                                        </div>
+                                        
+                                        <button class="read-more-btn" onclick="toggleContent('article3-content', this)">
+                                            Read More <i class="bi bi-chevron-down ms-2"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Article 4: Technology Innovation -->
+                            <div class="col-md-6">
+                                <div class="article-card">
+                                    <img src="img/Telecommunication Photos - Download Free High-Quality Pictures _ Freepik.jpeg" style="object-fit: contain;" class="card-img-top" alt="Ethics Icon">
                                     <div class="card-body">
                                         <span class="category-badge">Technology</span>
-                                        <h4 class="card-title">The Future of Web Development: AI-Assisted Coding</h4>
-                                        <p class="card-text">Exploring how AI and machine learning tools are reshaping how developers write, test, and deploy applications.</p>
-                                        <span class="read-more">Read More <i class="bi bi-arrow-right"></i></span>
+                                        <h4 class="card-title">The Future of AI in Education and Workplace Training</h4>
+                                        <p class="card-text">Artificial Intelligence is reshaping how we learn and work. At Stepway Technologies, we're pioneering approaches that make AI accessible, ethical, and effective for both educational institutions and corporate environments.</p>
+                                        
+                                        <div class="blog-content" id="article4-content">
+                                            <p>In today's rapidly evolving digital landscape, the integration of AI into learning and development programs is no longer optional—it's essential. But how do we ensure these technologies serve human needs rather than replace human connections?</p>
+                                            
+                                            <p>Our approach at Stepway Technologies focuses on three core principles: personalization at scale, ethical implementation, and measurable outcomes. Unlike traditional one-size-fits-all training programs, AI-powered systems can adapt to individual learning styles, pace, and preferences.</p>
+                                            
+                                            <p>In educational settings, this means students receive tailored content recommendations, adaptive assessments that identify knowledge gaps, and virtual mentors that provide immediate feedback. For corporate training, AI enables just-in-time learning, skill gap analysis, and personalized development paths that align with both individual career goals and organizational objectives.</p>
+                                            
+                                            <p>But technology alone isn't the answer. The human element remains crucial. That's why our solutions always maintain a balance between automated systems and human facilitation. AI handles the scalable, repetitive tasks while human experts focus on mentorship, complex problem-solving, and emotional support.</p>
+                                            
+                                            <p>Looking forward, we see AI becoming increasingly integrated into daily workflows, providing real-time guidance and support. Imagine a system that not only teaches a new software tool but also provides contextual help when you're actually using it. Or a platform that can detect when team communication patterns indicate potential conflicts and suggest proactive interventions.</p>
+                                            
+                                            <p>The future of AI in education and workplace training is not about replacing teachers or managers—it's about augmenting human capabilities and creating more effective, engaging, and personalized learning experiences.</p>
+                                            
+                                            <div class="key-features">
+                                                <h5>KEY FEATURES:</h5>
+                                                <ul>
+                                                    <li>Personalized learning paths powered by AI</li>
+                                                    <li>Real-time feedback and assessment</li>
+                                                    <li>Integration with existing workflows and systems</li>
+                                                    <li>Ethical AI implementation with human oversight</li>
+                                                </ul>
+                                            </div>
+                                            
+                                            <div class="benefits">
+                                                <h5>BENEFITS:</h5>
+                                                <ul>
+                                                    <li>Improved learning outcomes and retention</li>
+                                                    <li>More efficient training delivery</li>
+                                                    <li>Better alignment between individual and organizational goals</li>
+                                                    <li>Enhanced employee engagement and satisfaction</li>
+                                                </ul>
+                                            </div>
+                                            
+                                            <div class="get-started">
+                                                <h5>GET STARTED:</h5>
+                                                <p>Ready to explore how AI can transform your learning and development programs? Contact our team to schedule a consultation and see how our AI-powered solutions can be customized to meet your specific needs.</p>
+                                            </div>
+                                        </div>
+                                        
+                                        <button class="read-more-btn" onclick="toggleContent('article4-content', this)">
+                                            Read More <i class="bi bi-chevron-down ms-2"></i>
+                                        </button>
                                     </div>
-                                </a>
-                            </div>
-
-                            <!-- Article 2 -->
-                            <div class="col-md-6">
-                                <a href="#" class="article-card d-block text-decoration-none">
-                                    <img src="img/Leadership book cover design! _ Book cover contest.jpeg" class="card-img-top" alt="Brain Diagram">
-                                    <div class="card-body">
-                                        <span class="category-badge">E-Learning</span>
-                                        <h4 class="card-title">Personalized Learning Paths with Generative AI Algorithms</h4>
-                                        <p class="card-text">How Stepway Academy uses advanced algorithms to create adaptive learning experiences tailored to every student's pace and style.</p>
-                                        <span class="read-more">Read More <i class="bi bi-arrow-right"></i></span>
-                                    </div>
-                                </a>
-                            </div>
-
-                            <!-- Article 3 -->
-                            <div class="col-md-6">
-                                <a href="#" class="article-card d-block text-decoration-none">
-                                    <img src="img/Design a book cover for an autobiography.jpeg" class="card-img-top" alt="Data Graph">
-                                    <div class="card-body">
-                                        <span class="category-badge">Data Science</span>
-                                        <h4 class="card-title">Data-Driven Decision Making in Business: Leveraging Analytics</h4>
-                                        <p class="card-text">Transforming raw data into actionable insights for business growth and strategic planning with our expertise.</p>
-                                        <span class="read-more">Read More <i class="bi bi-arrow-right"></i></span>
-                                    </div>
-                                </a>
-                            </div>
-
-                            <!-- Article 4 -->
-                            <div class="col-md-6">
-                                <a href="#" class="article-card d-block text-decoration-none">
-                                    <img src="img/Check out Angelo Jeanpierre's new book cover from 99designs.jpeg" class="card-img-top" alt="Ethics Icon">
-                                    <div class="card-body">
-                                        <span class="category-badge">Ethics & Policy</span>
-                                        <h4 class="card-title">Ethical Considerations in AI-Powered Chat Systems</h4>
-                                        <p class="card-text">A deep dive into the policies and frameworks necessary to ensure AI is used responsibly and ethically in our systems.</p>
-                                        <span class="read-more">Read More <i class="bi bi-arrow-right"></i></span>
-                                    </div>
-                                </a>
+                                </div>
                             </div>
                             
                         </div>
@@ -821,7 +896,7 @@
             </div>
         </section>
         
-        <!-- --- Share Insight Section (image_1ce496.png) --- -->
+        <!-- --- Share Insight Section --- -->
         <section class="share-insight-section">
             <div class="container">
                 <h4>Want to Share Your Insight?</h4>
@@ -851,18 +926,18 @@
                 <div class="col-lg-2 col-md-4 col-6">
                     <h5>Quick Links</h5>
                     <ul class="list-unstyled">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Products</a></li>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="product-feelingschat.html">Products</a></li>
                         <li><a href="#">Stepway Academy</a></li>
-                        <li><a href="#">FeelingsChat</a></li>
-                        <li><a href="#">Services</a></li>
+                        <li><a href="product-feelingschat.html">FeelingsChat</a></li>
+                        <li><a href="services.html">Services</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-3 col-md-4 col-6">
                     <h5>Company</h5>
                     <ul class="list-unstyled">
                         <li><a href="#">About Us</a></li>
-                        <li><a href="#">Work With Us</a></li>
+                        <li><a href="work-with-us.html">Work With Us</a></li>
                         <li><a href="blog.html">Blog</a></li>
                         <li><a href="#">Careers</a></li>
                         <li><a href="#">Press</a></li>
@@ -873,7 +948,7 @@
                     <ul class="list-unstyled">
                         <li><a href="#">Help Center</a></li>
                         <li><a href="contact-us.html">Contact Us</a></li>
-                        <li><a href="#">Request a Quote</a></li>
+                        <li><a href="request-a-quote.html">Request a Quote</a></li>
                         <li><a href="#">Privacy Policy</a></li>
                         <li><a href="#">Terms of Service</a></li>
                     </ul>
@@ -911,25 +986,44 @@
     <!-- Bootstrap JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 
-<script>
-    // Form submission handling
-document.querySelectorAll('form').forEach(form => {
-    form.addEventListener('submit', function(e) {
-        const submitBtn = this.querySelector('button[type="submit"]');
-        const originalText = submitBtn.innerHTML;
+    <!-- Instagram Embed Script -->
+    <script async src="//www.instagram.com/embed.js"></script>
+
+    <script>
+        // Toggle content visibility
+        function toggleContent(contentId, button) {
+            const content = document.getElementById(contentId);
+            const isExpanded = content.classList.contains('expanded');
+            
+            if (isExpanded) {
+                content.classList.remove('expanded');
+                button.classList.remove('expanded');
+                button.innerHTML = 'Read More <i class="bi bi-chevron-down ms-2"></i>';
+            } else {
+                content.classList.add('expanded');
+                button.classList.add('expanded');
+                button.innerHTML = 'Show Less <i class="bi bi-chevron-up ms-2"></i>';
+            }
+        }
         
-        // Show loading state
-        submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Sending...';
-        submitBtn.disabled = true;
-        
-        // Re-enable after 5 seconds if still on page
-        setTimeout(() => {
-            submitBtn.innerHTML = originalText;
-            submitBtn.disabled = false;
-        }, 5000);
-    });
-});
-</script>
+        // Form submission handling
+        document.querySelectorAll('form').forEach(form => {
+            form.addEventListener('submit', function(e) {
+                const submitBtn = this.querySelector('button[type="submit"]');
+                const originalText = submitBtn.innerHTML;
+                
+                // Show loading state
+                submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Sending...';
+                submitBtn.disabled = true;
+                
+                // Re-enable after 5 seconds if still on page
+                setTimeout(() => {
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                }, 5000);
+            });
+        });
+    </script>
     <script src="assets/js/chatbot.js"></script>
 </body>
 </html>

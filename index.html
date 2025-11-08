@@ -6,7 +6,7 @@
     <title>Stepway Technologies - Home</title>
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" xintegrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     
     <!-- Bootstrap Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
@@ -384,635 +384,97 @@
             transform: scale(1.1);
         }
 
-
-.form-control:valid {
-    border-color: #198754;
-}
-
-.form-control:invalid {
-    border-color: #dc3545;
-}
-
-.form-feedback {
-    display: none;
-    font-size: 0.875rem;
-}
-
-.form-control:invalid + .form-feedback {
-    display: block;
-}
-
-
-/* Add this to your existing CSS in each HTML file */
-
-/* Chat Popup Styles */
-.chat-popup-container {
-    position: fixed;
-    bottom: 90px;
-    right: 25px;
-    width: 380px;
-    height: 600px;
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-    z-index: 1060;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    font-family: 'Roboto', sans-serif;
-}
-
-.chat-popup-header {
-    background-color: var(--stepway-blue);
-    color: white;
-    padding: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.chat-header-info {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-}
-
-.chat-header-info i {
-    font-size: 1.5rem;
-}
-
-.chat-popup-title {
-    font-weight: 600;
-    font-size: 1.1rem;
-    display: block;
-}
-
-.chat-status {
-    font-size: 0.8rem;
-    color: #ccc;
-    display: flex;
-    align-items: center;
-    gap: 0.25rem;
-}
-
-.status-indicator {
-    width: 8px;
-    height: 8px;
-    background-color: #4CAF50;
-    border-radius: 50%;
-    display: inline-block;
-}
-
-.chat-close-btn {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 1.2rem;
-    cursor: pointer;
-    padding: 0.25rem;
-    border-radius: 4px;
-}
-
-.chat-close-btn:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-}
-
-.chat-popup-body {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-}
-
-.chat-messages {
-    flex: 1;
-    padding: 1rem;
-    overflow-y: auto;
-    background-color: #f7f9fb;
-}
-
-.message-bubble {
-    max-width: 85%;
-    padding: 0.75rem 1rem;
-    border-radius: 12px;
-    margin-bottom: 1rem;
-    word-wrap: break-word;
-    position: relative;
-}
-
-.assistant-bubble {
-    background-color: white;
-    color: #333;
-    border-top-left-radius: 4px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-}
-
-.assistant-bubble i {
-    color: var(--stepway-blue);
-    margin-right: 0.5rem;
-}
-
-.user-bubble {
-    background-color: var(--stepway-blue);
-    color: white;
-    margin-left: auto;
-    border-top-right-radius: 4px;
-}
-
-.message-time {
-    font-size: 0.7rem;
-    opacity: 0.7;
-    margin-top: 0.25rem;
-}
-
-.chat-quick-actions {
-    margin-top: 1rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
-.quick-action-btn {
-    background-color: white;
-    color: var(--stepway-blue);
-    border: 1px solid var(--stepway-blue);
-    padding: 0.5rem 0.75rem;
-    border-radius: 6px;
-    font-size: 0.85rem;
-    cursor: pointer;
-    text-align: left;
-    transition: all 0.2s;
-}
-
-.quick-action-btn:hover {
-    background-color: var(--stepway-blue);
-    color: white;
-}
-
-.chat-popup-input {
-    border-top: 1px solid #eee;
-    padding: 1rem;
-}
-
-.chat-form-container {
-    background-color: white;
-}
-
-.chat-form-header h5 {
-    color: var(--stepway-blue);
-    margin-bottom: 0.5rem;
-    font-size: 1rem;
-}
-
-.chat-form-header p {
-    font-size: 0.85rem;
-    color: #666;
-    margin-bottom: 1rem;
-}
-
-.form-group {
-    margin-bottom: 1rem;
-}
-
-.form-group label {
-    display: block;
-    font-size: 0.85rem;
-    font-weight: 500;
-    margin-bottom: 0.25rem;
-    color: #333;
-}
-
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 0.5rem;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 0.85rem;
-    font-family: 'Roboto', sans-serif;
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-    outline: none;
-    border-color: var(--stepway-blue);
-}
-
-.chat-start-btn {
-    width: 100%;
-    background-color: var(--stepway-blue);
-    color: white;
-    border: none;
-    padding: 0.75rem;
-    border-radius: 6px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: background-color 0.2s;
-}
-
-.chat-start-btn:hover {
-    background-color: #0c1445;
-}
-
-.chat-input-area {
-    display: flex;
-    gap: 0.5rem;
-    align-items: center;
-}
-
-.chat-input {
-    flex: 1;
-    padding: 0.75rem;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    font-size: 0.9rem;
-}
-
-.chat-input:focus {
-    outline: none;
-    border-color: var(--stepway-blue);
-}
-
-.chat-send-btn {
-    background-color: var(--stepway-blue);
-    color: white;
-    border: none;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: background-color 0.2s;
-}
-
-.chat-send-btn:hover {
-    background-color: #0c1445;
-}
-
-.chat-popup-footer {
-    padding: 0.75rem 1rem;
-    background-color: #f5f5f5;
-    text-align: center;
-    font-size: 0.8rem;
-    color: #666;
-    border-top: 1px solid #eee;
-}
-
-/* Responsive design */
-@media (max-width: 768px) {
-    .chat-popup-container {
-        width: 100%;
-        height: 100%;
-        bottom: 0;
-        right: 0;
-        border-radius: 0;
-    }
-    
-    .chat-float-icon {
-        bottom: 20px;
-        right: 20px;
-    }
-}
-
-/* Animation for chat popup */
-@keyframes slideInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.chat-popup-container {
-    animation: slideInUp 0.3s ease-out;
-}
-
-/* Chat Popup Styles - Matching chat-popup.html design */
-.chat-popup-container {
-    position: fixed;
-    bottom: 90px;
-    right: 25px;
-    width: 380px;
-    height: 600px;
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-    z-index: 1060;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    font-family: 'Roboto', sans-serif;
-}
-
-.chat-header {
-    background-color: var(--stepway-blue);
-    color: white;
-    padding: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.chat-header .status {
-    font-size: 0.8rem;
-    color: #ccc;
-}
-
-.chat-messages {
-    flex-grow: 1;
-    padding: 1rem;
-    overflow-y: auto;
-    background-color: #f7f9fb;
-}
-
-.message-bubble {
-    max-width: 85%;
-    padding: 0.75rem 1rem;
-    border-radius: 12px;
-    margin-bottom: 1rem;
-    word-wrap: break-word;
-}
-
-.assistant-bubble {
-    background-color: white;
-    color: #333;
-    border-top-left-radius: 4px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-}
-
-.user-bubble {
-    background-color: var(--stepway-blue);
-    color: white;
-    margin-left: auto;
-    border-top-right-radius: 4px;
-}
-
-.chat-actions {
-    margin-top: 1rem;
-}
-
-.quick-action-btn {
-    background-color: white;
-    color: var(--stepway-blue);
-    border: 1px solid var(--stepway-blue);
-    padding: 0.6rem 1rem;
-    border-radius: 8px;
-    font-weight: 500;
-    font-size: 0.9rem;
-    transition: all 0.2s;
-    width: 100%;
-    text-align: left;
-    margin-bottom: 0.5rem;
-}
-
-.quick-action-btn:hover {
-    background-color: var(--stepway-blue);
-    color: white;
-}
-
-.chat-form-container {
-    border-top: 1px solid #eee;
-    padding: 1rem;
-    background: white;
-}
-
-.chat-form-header h5 {
-    color: var(--stepway-blue);
-    margin-bottom: 0.5rem;
-    font-size: 1rem;
-}
-
-.chat-form-header p {
-    font-size: 0.85rem;
-    color: #666;
-    margin-bottom: 1rem;
-}
-
-.form-group {
-    margin-bottom: 1rem;
-}
-
-.form-group label {
-    display: block;
-    font-size: 0.85rem;
-    font-weight: 500;
-    margin-bottom: 0.25rem;
-    color: #333;
-}
-
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 0.5rem;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 0.85rem;
-    font-family: 'Roboto', sans-serif;
-    box-sizing: border-box;
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-    outline: none;
-    border-color: var(--stepway-blue);
-}
-
-.chat-start-btn {
-    width: 100%;
-    background-color: var(--stepway-blue);
-    color: white;
-    border: none;
-    padding: 0.75rem;
-    border-radius: 6px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: background-color 0.2s;
-}
-
-.chat-start-btn:hover {
-    background-color: #0c1445;
-}
-
-.chat-input-area {
-    border-top: 1px solid #eee;
-    padding: 0.75rem 1rem;
-    display: flex;
-    align-items: center;
-    background: white;
-}
-
-.chat-input {
-    flex-grow: 1;
-    border: none;
-    outline: none;
-    padding: 0.5rem;
-    border-radius: 0;
-    background-color: white;
-    font-size: 0.9rem;
-}
-
-.input-icon {
-    color: #666;
-    cursor: pointer;
-    margin-left: 0.75rem;
-}
-
-.chat-footer {
-    padding: 0.75rem;
-    display: flex;
-    justify-content: space-around;
-    border-top: 1px solid #eee;
-    background: white;
-}
-
-.footer-btn {
-    background: none;
-    border: none;
-    color: #666;
-    font-size: 0.9rem;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    padding: 0.5rem;
-    border-radius: 4px;
-    transition: background-color 0.2s;
-}
-
-.footer-btn:hover {
-    background-color: #f5f5f5;
-}
-
-/* Make it responsive */
-@media (max-width: 768px) {
-    .chat-popup-container {
-        width: 100%;
-        height: 100%;
-        bottom: 0;
-        right: 0;
-        border-radius: 0;
-    }
-    
-    .chat-float-icon {
-        bottom: 20px;
-        right: 20px;
-    }
-}
-
-/* Animation for chat popup */
-.chat-popup-container {
-    animation: slideInUp 0.3s ease-out;
-}
-
-@keyframes slideInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Text colors for time */
-.text-xs {
-    font-size: 0.75rem;
-}
-
-.text-gray-400 {
-    color: #9ca3af;
-}
-
-.text-white {
-    color: white;
-}
-
-.text-lg {
-    font-size: 1.125rem;
-}
-
-.font-semibold {
-    font-weight: 600;
-}
-
-/* Flex utilities */
-.flex {
-    display: flex;
-}
-
-.items-center {
-    align-items: center;
-}
-
-.mr-1 {
-    margin-right: 0.25rem;
-}
-
-.mr-3 {
-    margin-right: 0.75rem;
-}
-
-.ml-2 {
-    margin-left: 0.5rem;
-}
-
-.mt-1 {
-    margin-top: 0.25rem;
-}
-
-.mt-3 {
-    margin-top: 0.75rem;
-}
-
-.mb-3 {
-    margin-bottom: 0.75rem;
-}
-
-.space-y-2 > * + * {
-    margin-top: 0.5rem;
-}
-
-.flex-col {
-    flex-direction: column;
-}
-
-/* Status indicator */
-.inline-block {
-    display: inline-block;
-}
-
-.w-2 {
-    width: 0.5rem;
-}
-
-.h-2 {
-    height: 0.5rem;
-}
-
-.bg-green-400 {
-    background-color: #4ade80;
-}
-
-.rounded-full {
-    border-radius: 9999px;
-}
-
-.cursor-pointer {
-    cursor: pointer;
-}
-
-.text-blue-600 {
-    color: #2563eb;
-}
-
-.text-xl {
-    font-size: 1.25rem;
-}
+        /* CEO Section Styles */
+        .ceo-section {
+            background-color: var(--stepway-light-bg);
+        }
+
+        .ceo-card {
+            background-color: var(--stepway-card-bg);
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+
+        .ceo-image {
+            height: 100%;
+            min-height: 400px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .ceo-content {
+            padding: 2.5rem;
+        }
+
+        .ceo-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--stepway-blue);
+        }
+
+        .ceo-credentials {
+            font-size: 0.9rem;
+            color: var(--stepway-text-light);
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+
+        /* Social Media Carousel */
+        .social-carousel {
+            background-color: var(--stepway-card-bg);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin: 2rem 0;
+        }
+        .social-carousel .carousel-item {
+            text-align: center;
+        }
+        .social-carousel .carousel-control-prev,
+        .social-carousel .carousel-control-next {
+            width: 5%;
+        }
+        .social-embed-container {
+            display: flex;
+            justify-content: center;
+            margin: 1rem 0;
+        }
+        .social-embed-container iframe {
+            max-width: 100%;
+        }
+
+        /* Testimonial Facebook Posts */
+        .testimonial-facebook-container {
+            display: flex;
+            justify-content: center;
+            margin: 1rem 0;
+        }
+        .testimonial-facebook-container iframe {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .hero-section h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero-section p {
+                font-size: 1.1rem;
+            }
+            
+            .section-padding {
+                padding: 3rem 0;
+            }
+            
+            .social-embed-container iframe,
+            .testimonial-facebook-container iframe {
+                width: 100% !important;
+            }
+        }
 
     </style>
 </head>
@@ -1042,40 +504,43 @@
                     <li class="nav-item">
                         <a class="nav-link" href="blog.html">Blog</a>
                     </li>
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            About
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+                            <li><a class="dropdown-item" href="#about">Our story</a></li>
+                            <li><a class="dropdown-item" href="blog.html#our_mission">Our mission</a></li>
+                        </ul>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="request-a-quote.html">Request a Quote</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="contact-us.html">Contact Us</a>
                     </li>
-                    <!-- This "Send More" button isn't on the main nav, but from a sub-page.
-                         I'll add it as an example of the blue button. -->
-                    <!-- 
-                    <li class="nav-item ms-lg-2">
-                        <a class="nav-link btn-nav" href="#">Send More</a>
-                    </li>
-                    -->
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- --- Hero Section (from image_1d67ba.jpg) --- -->
+    <!-- --- Hero Section --- -->
     <header class="hero-section">
         <div class="container">
             <h1 class="mb-3">We Build Knowledge, Technology, and Connections that Matter.</h1>
             <p>From learning to innovation, we turn ideas into impact.</p>
             <div>
                 <a href="services.html" class="btn btn-outline-light btn-lg btn-primary">Explore Services</a>
-                <a href="#" class="btn btn-outline-light btn-lg">Visit Stepway Academy</a><br>
-                <a href="#" class="btn btn-outline-light btn-lg">try feeling chat</a>
+                <a href="#" class="btn btn-outline-light btn-lg">Visit Stepway Academy</a> <br>
+                <a href="#" class="btn btn-outline-light btn-lg">Try FeelingsChat</a>
             </div>
         </div>
     </header>
 
     <main>
 
-        <!-- --- About Section (from image_1d67ba.jpg) --- -->
+        <!-- --- About Section --- -->
         <section class="section-padding about-section section-bg">
             <div class="container">
                 <div class="row g-5 align-items-center">
@@ -1091,8 +556,46 @@
                 </div>
             </div>
         </section>
+
+        <!-- --- Social Media Carousel --- -->
+        <section class="container">
+            <div class="social-carousel">
+                <h2 class="text-center mb-4 display-5">Latest News & Updates</h2>
+                <div id="socialCarousel" class="carousel slide" data-bs-ride="carousel">
+               
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="social-embed-container">
+                                <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fweb.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0F4v4cZjxprAJFyH4ZovBuudmk5joRBKodEegx9AK5vi56s4Yry41Ks8EvrWiWxEyl%26id%3D61582686912437&show_text=true&width=500" width="500" height="250" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                            </div>
+                            <p class="text-center mt-3">Posted on November 3, 2024</p>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="social-embed-container">
+                                <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7391008598455148545?collapsed=1" height="670" width="504" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
+                            </div>
+                            <p class="text-center mt-3">Posted on LinkedIn</p>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="social-embed-container">
+                                <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/DQlhPTWDE74/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/p/DQlhPTWDE74/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">View this post on Instagram</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/p/DQlhPTWDE74/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">A post shared by Stepway Technologies (@stepwaytechnologies)</a></p></div></blockquote>
+                            </div>
+                            <p class="text-center mt-3">Posted on Instagram</p>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#socialCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#socialCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+        </section>
         
-  <!-- --- Our Products Section (from image_1d679c.png) --- -->
+        <!-- --- Our Products Section --- -->
         <section class="section-padding section-bg-light">
             <div class="container">
                 <div class="text-center mb-5">
@@ -1119,7 +622,7 @@
             </div>
         </section>
 
-        <!-- --- Our Services Section (from image_1d675e.png) --- -->
+        <!-- --- Our Services Section --- -->
         <section id="services" class="section-padding section-bg-light">
             <div class="container">
                 <div class="text-center mb-5">
@@ -1181,7 +684,30 @@
             </div>
         </section>
 
-        <!-- --- Testimonials Section (from image_1d675e.png) --- -->
+        <!-- --- CEO Section --- -->
+        <section class="section-padding ceo-section" id="about">
+            <div class="container">
+                <div class="ceo-card">
+                    <div class="row g-0">
+                        <div class="col-lg-4">
+                            <div class="ceo-image" style="background-image: url('/img/4456fa956bb4f6e2a01a486dbe26ec45b7826d58.jpg');"></div>
+                        </div>
+                        <div class="col-lg-8">
+                            <div class="ceo-content">
+                                <h2 class="ceo-title">Bamikole Olaleye Akinsehinde — Founder & CEO, Stepway Technologies</h2>
+                                <p class="ceo-credentials">PhD (In-View), MA, PGP-AI/ML, BSc, AFHEA, MNIM (Chartered)</p>
+                                <p>Bamikole Olaleye Akinsehinde (BOA) leads Stepway Technologies with over a decade of work across AI, data science, software development, systems thinking, IT services, and AI-enabled modern farming and agritech. His journey began with Megastat Communication in 2007 and FastLink Communications in 2010, ventures that matured into Stepway Technologies, reflecting years of innovation, learning, and a consistent drive to build technology that simplifies life, enhances efficiency, and bridges people with practical solutions. He applies AI to complex, real-world challenges across finance, healthcare, automotive, retail, telecommunications, agriculture, energy, and human resources, including work in weather dynamics, where he applied AI in a hybrid system to improve the predictability of chaotic systems, aligning innovation with responsibility and measurable impact.</p>
+                                <p>BOA's multidisciplinary approach is grounded in Applied Physics and Creative App Development, complemented by advanced postgraduate programs in AI/ML and digital transformation. He is currently pursuing a PhD in the United Kingdom, alongside a Master's degree also obtained in the UK, further deepening his expertise in research and innovation. As an Associate Fellow of the Higher Education Academy (AFHEA) and a Chartered Member of the Nigerian Institute of Management (MNIM), he is committed to fostering learning, innovation, and responsible technology adoption while translating ideas into scalable products and services that address societal needs.</p>
+                                <p>He steers Stepway Technologies with deep proficiency in predictive modelling, generative AI solutions, data engineering and advanced analytics, cloud computing, software development, computer hardware engineering, AI research and development, modern farming powered by AI (precision agriculture, yield forecasting, and smart resource management), environmental impact assessments, conservation and sustainability programs, and training and human capacity development. This breadth enables Stepway Technologies to deliver cross-industry solutions where technology, ethics, and societal progress converge, championing a mission to harness AI responsibly and empower individuals, organisations, and communities to build smarter.</p>
+                                <p><a href="http://linkedin.com/in/bamikole">linked in</a> <br><a href="Google scholar: https://scholar.google.com/citations?user=NNeEs08AAAAJ&hl=en"> google schoolar</a> <br> <a href="https://www.Facebook.com/bamolakins"> facebook</a> <br><a href="https://www.researchgate.net/profile/Bamikole-Akinsehinde">research-gate</a> <br> <a href="bamikole@stepwaytechnologies.com"> mail</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- --- Testimonials Section --- -->
         <section class="section-padding testimonial" >
             <div class="container">
                 <div class="text-center mb-5">
@@ -1197,14 +723,8 @@
                         <div class="carousel-item active">
                             <div class="row justify-content-center">
                                 <div class="col-lg-8">
-                                    <div class="testimonial-card text-center">
-                                        <!-- Placeholder image for testimonial -->
-                                        <img src="https://placehold.co/80x80/0F1957/FFFFFF?text=JS" alt="Jane Smith" class="mx-auto">
-                                        <blockquote>
-                                            "Stepway Academy transformed our team's capabilities. The mentorship program helped us upskill faster than we thought possible."
-                                        </blockquote>
-                                        <h6 class="name">Jane Smith, Tech Lead</h6>
-                                        <p class="title">Innovate Inc.</p>
+                                    <div class="testimonial-facebook-container">
+                                        <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fweb.facebook.com%2Fvictoriaomodolapo.asana%2Fposts%2Fpfbid0TGpFxFw6WxmCaGaXJSduvQfg6sTA9APTh9WNrfwC9xFBmPLTvE6sC7CJfqB3n2Kol&show_text=true&width=500" width="500" height="250" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
                                     </div>
                                 </div>
                             </div>
@@ -1212,13 +732,8 @@
                         <div class="carousel-item">
                            <div class="row justify-content-center">
                                 <div class="col-lg-8">
-                                    <div class="testimonial-card text-center">
-                                        <img src="https://placehold.co/80x80/0F1957/FFFFFF?text=MD" alt="Mark Doe" class="mx-auto">
-                                        <blockquote>
-                                            "The AI chatbot they developed for us has been a game-changer for our customer support, handling 60% of inquiries instantly."
-                                        </blockquote>
-                                        <h6 class="name">Mark Doe, Head of Operations</h6>
-                                        <p class="title">E-Commerce Solutions</p>
+                                    <div class="testimonial-facebook-container">
+                                        <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fweb.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0QrvAae7oH1WF3hagsm9RNu5kdgDaEBEK4nUCEqCHpX4aJb9AeKXsQFB26X781x8Rl%26id%3D61575855240593&show_text=true&width=500" width="500" height="304" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
                                     </div>
                                 </div>
                             </div>
@@ -1226,24 +741,27 @@
                          <div class="carousel-item">
                            <div class="row justify-content-center">
                                 <div class="col-lg-8">
-                                    <div class="testimonial-card text-center">
-                                        <img src="https://placehold.co/80x80/0F1957/FFFFFF?text=SA" alt="Sarah Adams" class="mx-auto">
-                                        <blockquote>
-                                            "FeelingsChat has improved our team's communication. It provides a safe and structured way to discuss complex issues."
-                                        </blockquote>
-                                        <h6 class="name">Sarah Adams, HR Manager</h6>
-                                        <p class="title">Creative Minds Agency</p>
+                                    <div class="testimonial-facebook-container">
+                                        <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fweb.facebook.com%2Felsa.jae.2025%2Fposts%2Fpfbid02B4BrPTW53BEio2CSigVWRvkeBVaq2fuNAK9753psduRuEijZRfuuNn7X1xKKFjkAl&show_text=true&width=500" width="500" height="250" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
                 </div>
             </div>
         </section>
 
         
-        <!-- --- Why Choose Us Section (from image_1d6740.png) --- -->
+        <!-- --- Why Choose Us Section --- -->
         <section class="section-padding section-bg">
             <div class="container">
                  <div class="text-center mb-5">
@@ -1280,7 +798,7 @@
             </div>
         </section>
         
-        <!-- --- Get In Touch Section (from image_1d6726.png) --- -->
+        <!-- --- Get In Touch Section --- -->
         <section id="contact" class="section-padding section-bg-light">
             <div class="container">
                 <div class="text-center mb-5">
@@ -1336,7 +854,7 @@
 
     </main>
 
-    <!-- --- Footer (from image_1d6726.png) --- -->
+    <!-- --- Footer --- -->
     <footer class="footer">
         <div class="container">
             <div class="row gy-4">
@@ -1384,7 +902,7 @@
                 </div>
             </div>
 
-            <!-- Footer Contact Info (from image_1d6726.png) -->
+            <!-- Footer Contact Info -->
             <div class="row mt-4">
                 <div class="col-12">
                      <ul class="list-unstyled contact-info d-md-flex justify-content-center">
@@ -1418,7 +936,7 @@
 </a>
 
     <!-- Bootstrap JS Bundle -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" xintegrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
@@ -1431,27 +949,7 @@ s1.setAttribute('crossorigin','*');
 s0.parentNode.insertBefore(s1,s0);
 })();
 </script>
-<!-- End of Tawk.to Script
-<script>
-    // Form submission handling
-document.querySelectorAll('form').forEach(form => {
-    form.addEventListener('submit', function(e) {
-        const submitBtn = this.querySelector('button[type="submit"]');
-        const originalText = submitBtn.innerHTML;
-        
-        // Show loading state
-        submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Sending...';
-        submitBtn.disabled = true;
-        
-        // Re-enable after 5 seconds if still on page
-        setTimeout(() => {
-            submitBtn.innerHTML = originalText;
-            submitBtn.disabled = false;
-        }, 5000);
-    });
-});
-</script> -->
+<!-- End of Tawk.to Script -->
     <script src="assets/js/chatbot.js"></script>
 </body>
 </html>
-
