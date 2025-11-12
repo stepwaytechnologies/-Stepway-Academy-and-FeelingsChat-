@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stepway Technologies - Home</title>
- <link rel="shortcut icon" href="img/navy blue logo.jpg" type="image/x-icon">
+    <link rel="shortcut icon" href="img/navy blue logo.jpg" type="image/x-icon">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     
@@ -389,8 +389,8 @@
 }
 
 .ceo-card {
-    /* background-color: var(--stepway-card-bg);
-    border-radius: 12px;
+    
+   /* border-radius: 12px;
     box-shadow: 0 8px 25px rgba(0,0,0,0.08);
     overflow: hidden; */
 }
@@ -398,35 +398,40 @@
 .ceo-image-container {
     height: 100%;
     padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-
 .ceo-image {
     height: 400px;
-   
-    background-size:  cover;
-    background-position: center top;
+    width: 400px;
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
-    border-radius: 8px;
+    border-radius: 50%; /* This makes it perfectly round */
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    object-fit: cover; /* Ensures the image fills the circle properly */
+    border: 5px solid white; /* Added white border */
 }
-
 .ceo-content {
     padding: 2.5rem;
 }
 
 .ceo-title {
-    font-size: 1.5rem;
+    font-size: 2.5rem;
     margin-bottom: 1rem;
-    color: var(--stepway-blue);
+    color: var(--stepway-bungundy);
 }
 
 .ceo-credentials {
     font-size: 0.9rem;
-    color: var(--stepway-text-light);
+    color: var(--stepway-light-bg);
     margin-bottom: 1.5rem;
     font-style: italic;
 }
-
+.ceo-contact .ceo-credentials a{
+    color: var(--stepway-card-bg);
+}
 .ceo-contact {
     margin-top: 2rem;
     padding-top: 1.5rem;
@@ -443,12 +448,28 @@
     text-decoration: underline;
 }
 
+.read-more-link {
+    display: inline-block;
+    color: #ffffff;
+    background-color: var(--stepway-bungundy);
+    padding: 0.5rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    margin-top: 1rem;
+    transition: background-color 0.2s;
+}
+
+.read-more-link:hover {
+    background-color: #6a001a;
+    color: #ffffff;
+}
+
 /* Mobile responsiveness */
 @media (max-width: 991px) {
     .ceo-image {
         height: 350px;
-        background-position: top 700%;
-        object-fit: cover;
+        width: 350px;
     }
     
     .ceo-content {
@@ -456,15 +477,14 @@
     }
     
     .ceo-title {
-        font-size: 1.3rem;
+        font-size: 1.5rem;
     }
 }
 
 @media (max-width: 768px) {
     .ceo-image {
-        height: 350px;
-        background-position: top 700%;
-        object-fit: cover;
+        height: 300px;
+        width: 300px;
     }
     
     .ceo-content {
@@ -820,21 +840,20 @@
         </section>
 
         
-        
-<!-- --- CEO Section --- -->
-<section class="section-padding ceo-section" id="about">
+ <!-- --- CEO Section --- -->
+<section class="section-padding ceo-section" id="about" style=" background-color: #0f1957; color: white;">
     <div class="container">
         <div class="ceo-card">
             <div class="row g-0 align-items-center">
                 <div class="col-lg-4">
-                    <div class="ceo-image-container">
-                        <div class="ceo-image" style="background-image: url('/img/sir\ bams.jpg');"></div>
+                    <div class="ceo-image-container ">
+                        <div class="ceo-image " style="background-image: url('/img/sir\ bams.jpg');"></div>
                     </div>
                 </div>
                 <div class="col-lg-8">
                     <div class="ceo-content">
-                        <h2 class="ceo-title">Bamikole Olaleye Akinsehinde — Founder & CEO</h2>
-                        <p class="ceo-credentials">PhD (In-View), MA, PGP-AI/ML, BSc, AFHEA, MNIM (Chartered)</p>
+                        <h1 class="ceo-title " style="color: #f8f6f6;"><strong>Bamikole Olaleye Akinsehinde — Founder & CEO </strong></h1>
+                        <!-- <p class="ceo-credentials">PhD (In-View), MA, PGP-AI/ML, BSc, AFHEA, MNIM (Chartered)</p> -->
                         
                         <p style="text-align: justify;">
                             Bamikole Olaleye Akinsehinde (BOA) leads Stepway Technologies with over a decade of experience across AI, data science, software development, and IT services. His journey began in 2007 with tech ventures that evolved into Stepway Technologies, reflecting years of innovation focused on building practical technology solutions.
@@ -848,7 +867,7 @@
                             Read More <i class="bi bi-arrow-right"></i>
                         </a>
                         
-                        <div class="ceo-contact">
+                        <div class="ceo-contact ">
                             <p class="ceo-credentials">
                                 <strong>Connect:</strong><br>
                                 <a href="http://linkedin.com/in/bamikole">LinkedIn</a> • 
