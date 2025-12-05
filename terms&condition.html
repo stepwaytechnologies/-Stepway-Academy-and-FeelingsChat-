@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stepway Technologies - Terms & Privacy</title>
+    <link rel="shortcut icon" href="img/navy blue logo.jpg" type="image/x-icon">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --stepway-blue: #0F1957;
+            --stepway-light-bg: #f8f9fa;
+            --stepway-card-bg: #ffffff31;
+            --stepway-text-dark: #212529;
+            --stepway-text-light: #555;
+            --stepway-bungundy: #800020;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--stepway-light-bg);
+            color: var(--stepway-text-light);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            color: var(--stepway-blue);
+        }
+
+        .section-padding {
+            padding: 5rem 0;
+        }
+
+        .section-bg {
+            background-color: var(--stepway-card-bg);
+        }
+        
+        .section-bg-light {
+            background-color: #f8f9fa;
+        }
+
+        .btn-primary {
+            background-color: var(--stepway-blue);
+            border-color: var(--stepway-blue);
+            font-weight: 500;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+        }
+        
+        .btn-primary:hover {
+            background-color: #0c1445;
+            border-color: #0c1445;
+        }
+
+        /* --- Navbar --- */
+        .navbar {
+            background-color: var(--stepway-blue);
+            padding: 0.75rem 0;
+        }
+
+        .navbar-brand {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 1.6rem;
+            color: #ffffff !important;
+        }
+        
+        .navbar-nav .nav-link {
+            color: #ffffff;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #0d6efd;
+        }
+        
+        .navbar-nav .nav-link.active {
+            text-decoration: underline;
+            text-decoration-thickness: 2px;
+            text-underline-offset: 4px;
+        }
+        
+        .navbar-nav .nav-link.btn-nav {
+            background-color: #0d6efd;
+            color: #ffffff;
+            padding: 0.5rem 1.25rem;
+        }
+        
+        .navbar-nav .nav-link.btn-nav:hover {
+            background-color: #0b5ed7;
+        }
+
+        /* --- Hero Section --- */
+        .hero-section {
+            background-color: var(--stepway-blue);
+            background-image: linear-gradient(rgba(15, 25, 87, 0.8), rgba(15, 25, 87, 0.8)), url('/img/view-modern-classroom-school.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 6rem 0;
+            color: #ffffff;
+            text-align: center;
+        }
+        
+        .hero-section h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 1rem;
+        }
+        
+        .hero-section p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 1.5rem;
+            opacity: 0.9;
+        }
+
+        /* --- Content Sections --- */
+        .content-section {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            padding: 3rem;
+            margin-bottom: 3rem;
+        }
+        
+        .content-section h2 {
+            color: var(--stepway-blue);
+            border-bottom: 2px solid var(--stepway-bungundy);
+            padding-bottom: 0.75rem;
+            margin-bottom: 2rem;
+        }
+        
+        .content-section h3 {
+            color: var(--stepway-blue);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .content-section h4 {
+            color: var(--stepway-text-dark);
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        .content-section p {
+            margin-bottom: 1.2rem;
+        }
+        
+        .content-section ul, .content-section ol {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+        }
+        
+        .content-section li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .highlight-box {
+            background-color: #f0f4ff;
+            border-left: 4px solid var(--stepway-blue);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .last-updated {
+            color: var(--stepway-text-light);
+            font-style: italic;
+            font-size: 0.9rem;
+            text-align: right;
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid #eaeaea;
+        }
+        
+        /* --- Table of Contents --- */
+        .toc-section {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            position: sticky;
+            top: 2rem;
+        }
+        
+        .toc-section h4 {
+            color: var(--stepway-blue);
+            margin-bottom: 1.5rem;
+        }
+        
+        .toc-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .toc-list li {
+            margin-bottom: 0.75rem;
+            padding-left: 0;
+        }
+        
+        .toc-list a {
+            color: var(--stepway-text-light);
+            text-decoration: none;
+            transition: color 0.2s, padding-left 0.2s;
+            display: block;
+            padding: 0.25rem 0;
+        }
+        
+        .toc-list a:hover {
+            color: var(--stepway-blue);
+            padding-left: 5px;
+        }
+        
+        .toc-list .toc-sub {
+            list-style: none;
+            padding-left: 1rem;
+            margin-top: 0.5rem;
+        }
+        
+        .toc-list .toc-sub li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* --- Footer --- */
+        .footer {
+            background-color: var(--stepway-blue);
+            color: #ced4da;
+            padding-top: 4rem;
+            padding-bottom: 2rem;
+            margin-top: 5rem;
+        }
+
+        .footer .logo-font {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 1.8rem;
+            color: #ffffff;
+            margin-bottom: 1rem;
+        }
+
+        .footer h5 {
+            color: #ffffff;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer .list-unstyled li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer a {
+            color: #ced4da;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer a:hover {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .footer .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background-color: #0d6efd;
+            color: #ffffff;
+            margin-right: 0.5rem;
+            text-decoration: none;
+        }
+        
+        .footer .contact-info i {
+            margin-right: 10px;
+            font-size: 1.1rem;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #39427b;
+            padding-top: 1.5rem;
+            margin-top: 2rem;
+            font-size: 0.9rem;
+        }
+
+        /* --- Responsive Adjustments --- */
+        @media (max-width: 992px) {
+            .content-section {
+                padding: 2rem;
+            }
+            
+            .toc-section {
+                position: static;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 4rem 0;
+            }
+            
+            .hero-section h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero-section p {
+                font-size: 1.1rem;
+            }
+            
+            .content-section {
+                padding: 1.5rem;
+            }
+            
+            .section-padding {
+                padding: 3rem 0;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .content-section {
+                padding: 1.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- --- Navbar --- -->
+    <nav class="navbar navbar-expand-lg navbar-dark shadow-sm sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><img src="/img/Step-Way Logo.png" width="150px" alt="Stepway Technologies Logo"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="product-feelingschat.html">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="services.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="work-with-us.html">Work With Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="request-a-quote.html">Request a Quote</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact-us.html">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- --- Hero Section --- -->
+    <header class="hero-section">
+        <div class="container">
+            <h1>Legal Policies</h1>
+            <p>Stepway Technologies is committed to transparency and protecting your rights. Please review our Terms of Service and Privacy Policy below.</p>
+            <div class="d-flex flex-wrap justify-content-center gap-3">
+                <a href="#terms" class="btn btn-outline-light">Terms of Service</a>
+                <a href="#privacy" class="btn btn-outline-light">Privacy Policy</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="section-padding section-bg-light">
+        <div class="container">
+            <div class="row">
+                <!-- Table of Contents -->
+                <div class="col-lg-4">
+                    <div class="toc-section">
+                        <h4>Contents</h4>
+                        <ul class="toc-list">
+                            <li><a href="#terms">Terms of Service</a></li>
+                            <ul class="toc-sub">
+                                <li><a href="#terms-scope">Scope and Applicability</a></li>
+                                <li><a href="#terms-services">Services</a></li>
+                                <li><a href="#terms-responsibilities">Client Responsibilities</a></li>
+                                <li><a href="#terms-ownership">Ownership and Intellectual Property</a></li>
+                                <li><a href="#terms-confidentiality">Confidentiality</a></li>
+                                <li><a href="#terms-payment">Payment Terms</a></li>
+                                <li><a href="#terms-refund">Refund Policy</a></li>
+                                <li><a href="#terms-termination">Termination</a></li>
+                                <li><a href="#terms-dispute">Dispute Resolution</a></li>
+                                <li><a href="#terms-governing">Governing Law</a></li>
+                            </ul>
+                            <li><a href="#privacy">Privacy Policy</a></li>
+                            <ul class="toc-sub">
+                                <li><a href="#privacy-scope">Scope and Applicability</a></li>
+                                <li><a href="#privacy-data">Types of Personal Data Collected</a></li>
+                                <li><a href="#privacy-purpose">Purpose of Data Collection</a></li>
+                                <li><a href="#privacy-protection">Data Protection Measures</a></li>
+                                <li><a href="#privacy-disclosure">Disclosure of Personal Data</a></li>
+                                <li><a href="#privacy-retention">Data Retention</a></li>
+                            </ul>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Main Content -->
+                <div class="col-lg-8">
+                    <!-- Terms of Service -->
+                    <section id="terms" class="content-section">
+                        <h2>Stepway Technologies Terms of Service</h2>
+                        <p class="lead">These Terms of Service ("Terms") govern your use of Stepway Technologies' services, including but not limited to, software development, design, and consulting services.</p>
+                        
+                        <div class="last-updated">Last Updated: January 1, 2025</div>
+                        
+                        <div class="highlight-box">
+                            <p><strong>Important:</strong> By using our services, you agree to be bound by these Terms. If you do not agree to these Terms, please do not use our services.</p>
+                        </div>
+                        
+                        <h3 id="terms-scope">1. Scope and Applicability</h3>
+                        <p>These Terms apply to all clients, employees, contractors, partners, and third-party personnel who use our services or interact with us.</p>
+                        
+                        <h3 id="terms-services">2. Services</h3>
+                        <p>We provide services, including but not limited to:</p>
+                        <ul>
+                            <li>Software development and design</li>
+                            <li>Consulting and advisory services</li>
+                            <li>Training and support services</li>
+                        </ul>
+                        
+                        <h3 id="terms-responsibilities">3. Client Responsibilities</h3>
+                        <p>Clients are responsible for:</p>
+                        <ul>
+                            <li>Providing clear and accurate information about their requirements</li>
+                            <li>Communicating promptly and effectively with our team</li>
+                            <li>Making timely payments for services rendered</li>
+                            <li>Respecting our employees and contractors</li>
+                        </ul>
+                        
+                        <h3 id="terms-ownership">4. Ownership and Intellectual Property</h3>
+                        <p>All intellectual property, including but not limited to software, designs, and content, created by employees during and after their employment with Stepway Technologies belongs to the company.</p>
+                        <p>The product being designed or developed for a client will be the property of the client after the final payment has been made.</p>
+                        
+                        <h3 id="terms-confidentiality">5. Confidentiality</h3>
+                        <p>Clients are expected to maintain confidentiality and not disclose sensitive company information to third parties.</p>
+                        <p>We will also maintain confidentiality and protect client information in accordance with applicable laws and regulations.</p>
+                        
+                        <h3 id="terms-payment">6. Payment Terms</h3>
+                        <p>Payment terms will be specified in the contract or agreement.</p>
+                        <p>We accept payment methods, including but not limited to, bank transfer, credit card, and online payment platforms.</p>
+                        
+                        <h3 id="terms-refund">7. Refund Policy</h3>
+                        <p>Refunds may be granted under the following conditions:</p>
+                        <ul>
+                            <li><strong>Work not initiated:</strong> If Stepway Technologies has not started the project or delivered any service, a full refund may be issued.</li>
+                            <li><strong>Partial work completed:</strong> If work has already started, refunds will be prorated based on the percentage of work completed.</li>
+                            <li><strong>Service not delivered as agreed:</strong> If Stepway Technologies fails to deliver the agreed service or project according to scope, a refund (full or partial) may be issued after review.</li>
+                            <li><strong>Mutual cancellation:</strong> If both parties agree to end a project early, the refund amount will be determined based on completed work and expenses incurred.</li>
+                        </ul>
+                        
+                        <h3 id="terms-termination">8. Termination</h3>
+                        <p>We reserve the right to terminate our services at any time with prior notice.</p>
+                        <p>Clients may terminate their engagement with us by providing written notice.</p>
+                        
+                        <h3 id="terms-dispute">9. Dispute Resolution</h3>
+                        <p>Any disagreement or conflict that arises from these Terms or in connection with Stepway Technologies will be resolved through arbitration in accordance with the Arbitration and Conciliation Act, Cap A18, Laws of the Federation of Nigeria, 2004.</p>
+                        
+                        <h3 id="terms-governing">10. Governing Law</h3>
+                        <p>These Terms shall be governed by and construed in accordance with the laws of Nigeria.</p>
+                        
+                        <h3 id="terms-contact">11. Contact Us</h3>
+                        <p>If you have any questions or concerns about these Terms, please contact us at <a href="mailto:legal@stepwaytechnologies.com">legal@stepwaytechnologies.com</a>.</p>
+                    </section>
+                    
+                    <!-- Privacy Policy -->
+                    <section id="privacy" class="content-section">
+                        <h2>Privacy Policy</h2>
+                        <p class="lead">At Stepway Technologies, we are committed to protecting the privacy and security of our clients', employees', and third-party personnel's personal data. This Privacy Policy explains how we collect, use, disclose, and protect personal data in accordance with applicable laws and regulations, including the Nigeria Data Protection Regulation (NDPR) 2019.</p>
+                        
+                        <div class="last-updated">Last Updated: January 1, 2025</div>
+                        
+                        <div class="highlight-box">
+                            <p><strong>Your Privacy Matters:</strong> We value your trust and are committed to protecting your personal information. This policy outlines how we handle your data.</p>
+                        </div>
+                        
+                        <h3 id="privacy-scope">1. Scope and Applicability</h3>
+                        <p>This Privacy Policy applies to all personal data collected by Stepway Technologies through our website, mobile applications, services, and any other means. This policy applies to all employees, clients, contractors, partners, and third-party personnel who interact with us or provide personal data.</p>
+                        
+                        <h3 id="privacy-data">2. Types of Personal Data Collected</h3>
+                        <p>We collect personal data, including but not limited to:</p>
+                        <ul>
+                            <li>Contact information (e.g., name, email address, phone number, address)</li>
+                            <li>Payment information (e.g., bank account, credit card details)</li>
+                            <li>Identification documents (e.g., ID, passport, driver's license)</li>
+                            <li>Employment information (e.g., job title, employer, work experience)</li>
+                            <li>Technical information (e.g., IP address, browser type, device information)</li>
+                        </ul>
+                        
+                        <h3 id="privacy-purpose">3. Purpose of Data Collection</h3>
+                        <p>We collect and process personal data for the following purposes:</p>
+                        <ul>
+                            <li>To provide services, process payments, and communicate with clients and employees</li>
+                            <li>To improve our services, products, and user experience</li>
+                            <li>To comply with applicable laws and regulations</li>
+                            <li>To protect our rights, interests, and safety</li>
+                        </ul>
+                        
+                        <h3 id="privacy-protection">4. Data Protection Measures</h3>
+                        <p>We implement reasonable security measures to protect personal data, including:</p>
+                        <ul>
+                            <li>Encryption and secure storage</li>
+                            <li>Access controls and authentication</li>
+                            <li>Regular monitoring and testing</li>
+                            <li>Data breach notification procedures</li>
+                        </ul>
+                        
+                        <h3 id="privacy-disclosure">5. Disclosure of Personal Data</h3>
+                        <p>We may disclose personal data to:</p>
+                        <ul>
+                            <li>Authorized employees, contractors, and third-party personnel</li>
+                            <li>Clients and partners with your consent</li>
+                            <li>Law enforcement and regulatory authorities as required by law</li>
+                            <li>Third-party service providers (e.g., payment processors, hosting providers)</li>
+                        </ul>
+                        
+                        <h3 id="privacy-retention">6. Data Retention</h3>
+                        <p>We retain personal data for as long as necessary to fulfill the purposes of collection, unless a longer retention period is required or permitted by law.</p>
+                        
+                        <h3 id="privacy-contact">7. Contact Us</h3>
+                        <p>If you have any questions or concerns about this Privacy Policy, please contact us at <a href="mailto:privacy@stepwaytechnologies.com">privacy@stepwaytechnologies.com</a>.</p>
+                    </section>
+                    
+                    <div class="text-center mt-5">
+                        <a href="contact-us.html" class="btn btn-primary btn-lg me-3">Contact Us</a>
+                        <a href="index.html" class="btn btn-outline-primary btn-lg">Back to Home</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- --- Footer --- -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-lg-4 col-md-12">
+                    <h5 class="logo-font">Stepway Technologies</h5>
+                    <p class="pe-3">
+                        Connecting education, technology, and emotional intelligence to create meaningful impact for individuals and organizations.
+                    </p>
+                    <div class="social-icons mt-3">
+                        <a href="https://www.linkedin.com/company/stepwaytechnologies/" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=61582686912437" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="https://x.com/StepwayTech" aria-label="Twitter"><i class="bi bi-twitter"></i></a>
+                        <a href="https://www.instagram.com/stepwaytechnologies" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="product-feelingschat.html">Products</a></li>
+                        <li><a href="https://learnstepwaytechnologies.netlify.app/" target="_blank">Stepway Academy</a></li>
+                        <li><a href="#">FeelingsChat</a></li>
+                        <li><a href="services.html">Services</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4 col-6">
+                    <h5>Company</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="work-with-us.html">Work With Us</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4 col-12">
+                    <h5>Support</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="contact-us.html">Contact Us</a></li>
+                        <li><a href="request-a-quote.html">Request a Quote</a></li>
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#terms">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Footer Contact Info -->
+            <div class="row mt-4">
+                <div class="col-12">
+                    <ul class="list-unstyled contact-info d-md-flex justify-content-center">
+                        <li class="mb-2 mb-md-0 me-md-4">
+                            <i class="bi bi-geo-alt-fill"></i>
+                            Stepway Technologies, Ibadan, Oyo State, Nigeria
+                        </li>
+                        <li class="mb-2 mb-md-0 me-md-4">
+                            <i class="bi bi-telephone-fill"></i>
+                            +44 7440 307 875
+                        </li>
+                        <li class="mb-2 mb-md-0">
+                            <i class="bi bi-envelope-fill"></i>
+                            info@stepwaytechnologies.com
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom text-center">
+                <p>&copy; 2025 Stepway Technologies. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Highlight current section in TOC
+        function highlightCurrentSection() {
+            const sections = document.querySelectorAll('.content-section h2, .content-section h3');
+            const tocLinks = document.querySelectorAll('.toc-list a');
+            
+            let currentSection = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if(window.scrollY >= (sectionTop - 150)) {
+                    currentSection = section.getAttribute('id');
+                }
+            });
+            
+            tocLinks.forEach(link => {
+                link.classList.remove('active');
+                if(link.getAttribute('href') === `#${currentSection}`) {
+                    link.classList.add('active');
+                    link.style.color = 'var(--stepway-blue)';
+                    link.style.fontWeight = '600';
+                }
+            });
+        }
+        
+        window.addEventListener('scroll', highlightCurrentSection);
+        window.addEventListener('load', highlightCurrentSection);
+    </script>
+</body>
+</html>
